@@ -82,12 +82,12 @@ export default function LeaderboardPage() {
         </div>
       </motion.div>
 
-      <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 w-full">
+      <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8 w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="xl:col-span-1 space-y-6"
+          className="lg:col-span-1 xl:col-span-1 space-y-6"
         >
           <div className="space-y-4">
             {topThree.map((student, index) => {
@@ -150,7 +150,7 @@ export default function LeaderboardPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="xl:col-span-2"
+          className="lg:col-span-2 xl:col-span-3"
         >
           <Card className="bg-card/50 border-border/50 backdrop-blur-sm h-full">
             <CardHeader className="pb-4">

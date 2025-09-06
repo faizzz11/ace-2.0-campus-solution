@@ -97,12 +97,12 @@ export default function DashboardPage() {
 
   return (
     <div className="space-y-6 w-full">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="lg:col-span-2"
+          className="md:col-span-2 lg:col-span-3"
         >
           <Card className="bg-card/50 border-border/50 backdrop-blur-sm">
             <CardHeader className="pb-4">
@@ -242,7 +242,7 @@ export default function DashboardPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="space-y-6"
+          className="md:col-span-2 lg:col-span-1 space-y-6"
         >
           <Card className="bg-gradient-to-br from-card/50 to-card/30 border-border/50 backdrop-blur-sm">
             <CardHeader className="pb-4">
