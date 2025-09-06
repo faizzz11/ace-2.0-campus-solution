@@ -28,9 +28,9 @@ export default function Hero() {
               transition={{ duration: 0.5 }}
               className="mb-8"
             >
-              <Badge variant="secondary" className="inline-flex items-center gap-2 px-4 py-2 text-sm">
-                <Sparkles className="h-4 w-4" />
-                Latest component
+              <Badge variant="secondary" className="inline-flex items-center gap-2 px-4 py-2 text-sm border-[#e78a53]/30 bg-[#e78a53]/10">
+                <Sparkles className="h-4 w-4 text-[#e78a53]" />
+                <span className="text-[#e78a53] font-medium">AI-Powered Campus Platform</span>
               </Badge>
             </motion.div>
 
@@ -42,8 +42,8 @@ export default function Hero() {
               className="mb-8"
             >
               <h1 id="main-title" className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
-                Reach <strong>developers</strong> <span>&</span> <br />
-                <strong>creators</strong> <em className="italic">effortlessly</em>
+                Connect with <strong>Clubs</strong> <span>&</span> <br />
+                <strong>Teams</strong> <em className="italic">Intelligently</em>
               </h1>
             </motion.div>
 
@@ -54,8 +54,8 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="mx-auto mb-12 max-w-2xl text-lg text-muted-foreground"
             >
-              Beautiful, accessible components built with Tailwind CSS and Framer Motion. Copy, paste, and customize to
-              build your next project faster.
+              Reinkei's AI-powered platform connects students with clubs, project teams, and faculty initiatives. 
+              Get personalized recommendations based on your skills, interests, and academic goals.
             </motion.p>
 
             <motion.div
@@ -136,7 +136,7 @@ export default function Hero() {
             className="mt-auto pb-8"
           >
             <div className="text-center">
-              <p className="text-sm text-muted-foreground mb-6">Trusted by developers at</p>
+              <p className="text-sm text-muted-foreground mb-6">Trusted by leading universities</p>
               <div className="flex items-center justify-center gap-8">
                 {/* Vercel Logo */}
                 <div className="opacity-60 grayscale hover:opacity-100 hover:grayscale-0 hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.3)] transition-all duration-300">

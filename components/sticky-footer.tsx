@@ -64,7 +64,7 @@ export function StickyFooter() {
                   onMouseEnter={(e) => (e.target.style.color = "rgba(18, 17, 19, 0.8)")}
                   onMouseLeave={(e) => (e.target.style.color = "#121113")}
                 >
-                  Docs
+                  About
                 </li>
                 <li
                   className="hover:underline cursor-pointer transition-colors"
@@ -72,7 +72,7 @@ export function StickyFooter() {
                   onMouseEnter={(e) => (e.target.style.color = "rgba(18, 17, 19, 0.8)")}
                   onMouseLeave={(e) => (e.target.style.color = "#121113")}
                 >
-                  Components
+                  Features
                 </li>
               </ul>
               <ul className="space-y-2">
@@ -82,7 +82,7 @@ export function StickyFooter() {
                   onMouseEnter={(e) => (e.target.style.color = "rgba(18, 17, 19, 0.8)")}
                   onMouseLeave={(e) => (e.target.style.color = "#121113")}
                 >
-                  Github
+                  Support
                 </li>
                 <li
                   className="hover:underline cursor-pointer transition-colors"
@@ -90,7 +90,7 @@ export function StickyFooter() {
                   onMouseEnter={(e) => (e.target.style.color = "rgba(18, 17, 19, 0.8)")}
                   onMouseLeave={(e) => (e.target.style.color = "#121113")}
                 >
-                  Twitter
+                  Contact
                 </li>
                 <li
                   className="hover:underline cursor-pointer transition-colors"
@@ -98,18 +98,18 @@ export function StickyFooter() {
                   onMouseEnter={(e) => (e.target.style.color = "rgba(18, 17, 19, 0.8)")}
                   onMouseLeave={(e) => (e.target.style.color = "#121113")}
                 >
-                  Discord
+                  Partners
                 </li>
               </ul>
             </motion.div>
             <motion.h2
-              className="absolute bottom-0 left-0 translate-y-1/3 sm:text-[192px] text-[80px] font-bold select-none"
+              className="absolute bottom-0 left-0 translate-y-1/3 sm:text-[160px] text-[60px] font-bold select-none"
               style={{ color: "#121113" }}
               initial={{ opacity: 0, x: -100 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              v0
+              Reinkei
             </motion.h2>
           </div>
         </motion.div>
