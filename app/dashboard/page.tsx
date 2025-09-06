@@ -273,34 +273,34 @@ export default function DashboardPage() {
                 <div className="grid grid-cols-1 gap-3">
                   <div className="flex items-center justify-between p-3 bg-background/30 rounded-lg">
                     <div className="flex items-center gap-3">
-                      <div className="p-2 bg-blue-500/10 rounded-lg">
-                        <Calendar className="h-4 w-4 text-blue-500" />
+                      <div className="p-2 bg-[#e78a53]/10 rounded-lg">
+                        <Calendar className="h-4 w-4 text-[#e78a53]" />
                       </div>
                       <span className="text-sm font-medium text-foreground">Events</span>
                     </div>
-                    <Badge variant="secondary" className="bg-blue-500/10 text-blue-500">
+                    <Badge variant="secondary" className="bg-[#e78a53]/10 text-[#e78a53]">
                       {studentData.eventsAttended}
                     </Badge>
                   </div>
                   <div className="flex items-center justify-between p-3 bg-background/30 rounded-lg">
                     <div className="flex items-center gap-3">
-                      <div className="p-2 bg-green-500/10 rounded-lg">
-                        <Users className="h-4 w-4 text-green-500" />
+                      <div className="p-2 bg-[#e78a53]/10 rounded-lg">
+                        <Users className="h-4 w-4 text-[#e78a53]" />
                       </div>
                       <span className="text-sm font-medium text-foreground">Clubs</span>
                     </div>
-                    <Badge variant="secondary" className="bg-green-500/10 text-green-500">
+                    <Badge variant="secondary" className="bg-[#e78a53]/10 text-[#e78a53]">
                       {studentData.clubsJoined}
                     </Badge>
                   </div>
                   <div className="flex items-center justify-between p-3 bg-background/30 rounded-lg">
                     <div className="flex items-center gap-3">
-                      <div className="p-2 bg-purple-500/10 rounded-lg">
-                        <BookOpen className="h-4 w-4 text-purple-500" />
+                      <div className="p-2 bg-[#e78a53]/10 rounded-lg">
+                        <BookOpen className="h-4 w-4 text-[#e78a53]" />
                       </div>
                       <span className="text-sm font-medium text-foreground">Projects</span>
                     </div>
-                    <Badge variant="secondary" className="bg-purple-500/10 text-purple-500">
+                    <Badge variant="secondary" className="bg-[#e78a53]/10 text-[#e78a53]">
                       {studentData.projectsCompleted}
                     </Badge>
                   </div>
@@ -312,8 +312,8 @@ export default function DashboardPage() {
           <Card className="bg-gradient-to-br from-card/50 to-card/30 border-border/50 backdrop-blur-sm">
             <CardHeader className="pb-4">
               <CardTitle className="flex items-center gap-3">
-                <div className="p-2 bg-yellow-500/10 rounded-lg">
-                  <Award className="h-5 w-5 text-yellow-500" />
+                <div className="p-2 bg-[#e78a53]/10 rounded-lg">
+                  <Award className="h-5 w-5 text-[#e78a53]" />
                 </div>
                 <div>
                   <span className="text-foreground">Achievements</span>

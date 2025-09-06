@@ -54,13 +54,13 @@ export default function TeamsPage() {
   const getProjectTypeBadge = (type: string) => {
     switch (type) {
       case "Faculty Project":
-        return "bg-blue-500/10 text-blue-500 border-blue-500/20"
+        return "bg-[#e78a53]/10 text-[#e78a53] border-[#e78a53]/20"
       case "Student Project":
-        return "bg-green-500/10 text-green-500 border-green-500/20"
+        return "bg-[#e78a53]/10 text-[#e78a53] border-[#e78a53]/20"
       case "Research Project":
-        return "bg-purple-500/10 text-purple-500 border-purple-500/20"
+        return "bg-[#e78a53]/10 text-[#e78a53] border-[#e78a53]/20"
       default:
-        return "bg-gray-500/10 text-gray-500 border-gray-500/20"
+        return "bg-[#e78a53]/10 text-[#e78a53] border-[#e78a53]/20"
     }
   }
 
@@ -75,9 +75,9 @@ export default function TeamsPage() {
   const getDeadlineStatus = (deadline: string) => {
     const days = getDaysUntilDeadline(deadline)
     if (days < 0) return { status: "expired", color: "text-red-500", bg: "bg-red-500/10" }
-    if (days <= 3) return { status: "urgent", color: "text-orange-500", bg: "bg-orange-500/10" }
-    if (days <= 7) return { status: "soon", color: "text-yellow-500", bg: "bg-yellow-500/10" }
-    return { status: "open", color: "text-green-500", bg: "bg-green-500/10" }
+    if (days <= 3) return { status: "urgent", color: "text-[#e78a53]", bg: "bg-[#e78a53]/10" }
+    if (days <= 7) return { status: "soon", color: "text-[#e78a53]/80", bg: "bg-[#e78a53]/8" }
+    return { status: "open", color: "text-[#e78a53]/60", bg: "bg-[#e78a53]/6" }
   }
 
   return (
@@ -99,7 +99,7 @@ export default function TeamsPage() {
             </div>
           </div>
           <div className="flex items-center gap-3">
-            <Badge variant="secondary" className="bg-green-500/10 text-green-500 border-green-500/20 px-3 py-1">
+            <Badge variant="secondary" className="bg-[#e78a53]/10 text-[#e78a53] border-[#e78a53]/20 px-3 py-1">
               <CheckCircle className="h-3 w-3 mr-1" />
               {openProjects.length} Open Projects
             </Badge>
@@ -116,8 +116,8 @@ export default function TeamsPage() {
         <Card className="bg-card/50 border-border/50 backdrop-blur-sm">
           <CardContent className="p-4">
             <div className="flex items-center gap-3">
-              <div className="p-2 bg-green-500/10 rounded-lg">
-                <CheckCircle className="h-5 w-5 text-green-500" />
+              <div className="p-2 bg-[#e78a53]/10 rounded-lg">
+                <CheckCircle className="h-5 w-5 text-[#e78a53]" />
               </div>
               <div>
                 <p className="text-sm text-muted-foreground">Available</p>
@@ -130,8 +130,8 @@ export default function TeamsPage() {
         <Card className="bg-card/50 border-border/50 backdrop-blur-sm">
           <CardContent className="p-4">
             <div className="flex items-center gap-3">
-              <div className="p-2 bg-orange-500/10 rounded-lg">
-                <AlertCircle className="h-5 w-5 text-orange-500" />
+              <div className="p-2 bg-[#e78a53]/10 rounded-lg">
+                <AlertCircle className="h-5 w-5 text-[#e78a53]" />
               </div>
               <div>
                 <p className="text-sm text-muted-foreground">Urgent</p>
@@ -160,8 +160,8 @@ export default function TeamsPage() {
         <Card className="bg-card/50 border-border/50 backdrop-blur-sm">
           <CardContent className="p-4">
             <div className="flex items-center gap-3">
-              <div className="p-2 bg-blue-500/10 rounded-lg">
-                <Award className="h-5 w-5 text-blue-500" />
+              <div className="p-2 bg-[#e78a53]/10 rounded-lg">
+                <Award className="h-5 w-5 text-[#e78a53]" />
               </div>
               <div>
                 <p className="text-sm text-muted-foreground">Match Rate</p>
@@ -279,7 +279,7 @@ export default function TeamsPage() {
                     <Button 
                       className={`flex-1 ${
                         isApplied 
-                          ? 'bg-green-600 hover:bg-green-700' 
+                          ? 'bg-[#e78a53]/80 hover:bg-[#e78a53]/70' 
                           : 'bg-[#e78a53] hover:bg-[#e78a53]/90'
                       } text-white`}
                       onClick={() => handleApply(project.id)}
@@ -317,7 +317,7 @@ export default function TeamsPage() {
           <Card className="bg-card/50 border-border/50 backdrop-blur-sm">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <CheckCircle className="h-5 w-5 text-green-500" />
+                <CheckCircle className="h-5 w-5 text-[#e78a53]" />
                 Your Applications ({appliedProjects.size})
               </CardTitle>
             </CardHeader>

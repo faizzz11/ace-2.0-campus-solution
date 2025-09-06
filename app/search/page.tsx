@@ -96,8 +96,8 @@ export default function SearchPage() {
       >
         <div className="flex items-center justify-between mb-8">
           <div className="flex items-center gap-4">
-            <div className="p-3 bg-green-500/10 rounded-xl">
-              <Search className="h-8 w-8 text-green-500" />
+            <div className="p-3 bg-[#e78a53]/10 rounded-xl">
+              <Search className="h-8 w-8 text-[#e78a53]" />
             </div>
             <div>
               <h1 className="text-3xl font-bold text-foreground">Search Opportunities</h1>
@@ -105,7 +105,7 @@ export default function SearchPage() {
             </div>
           </div>
           <div className="flex items-center gap-3">
-            <Badge variant="secondary" className="bg-blue-500/10 text-blue-500 border-blue-500/20 px-3 py-1">
+            <Badge variant="secondary" className="bg-[#e78a53]/10 text-[#e78a53] border-[#e78a53]/20 px-3 py-1">
               <Target className="h-3 w-3 mr-1" />
               Advanced Filters
             </Badge>

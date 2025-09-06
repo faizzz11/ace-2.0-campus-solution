@@ -74,7 +74,7 @@ const sidebarItems = [
     title: "Search",
     url: "/search",
     icon: Target,
-    description: "Find opportunities",
+    description: "opportunities",
     color: "text-green-500",
     bgColor: "bg-green-500/10",
   },
@@ -218,11 +218,15 @@ export default function SharedLayout({
                         {currentUser?.name?.charAt(0)}
                       </AvatarFallback>
                     </Avatar>
-                    <div className="flex flex-col items-start flex-1">
-                      <span className="text-sm font-semibold text-foreground">{currentUser?.name}</span>
-                      <span className="text-xs text-muted-foreground">{currentUser?.email}</span>
+                    <div className="flex flex-col items-start flex-1 min-w-0">
+                      <span className="text-sm font-semibold text-foreground truncate max-w-[150px]" title={currentUser?.name}>
+                        {currentUser?.name?.length > 11 ? `${currentUser?.name.substring(0, 11)}...` : currentUser?.name}
+                      </span>
+                      <span className="text-xs text-muted-foreground truncate max-w-[150px]" title={currentUser?.email}>
+                        {currentUser?.email?.length > 18 ? `${currentUser?.email.substring(0, 18)}...` : currentUser?.email}
+                      </span>
                     </div>
-                    <Badge variant="secondary" className="bg-[#e78a53]/10 text-[#e78a53] border-[#e78a53]/20">
+                    <Badge variant="secondary" className="bg-[#e78a53]/10 text-[#e78a53] border-[#e78a53]/20 mb-5">
                       Pro
                     </Badge>
                   </Button>

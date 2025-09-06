@@ -25,7 +25,7 @@ export default function LoginPage() {
       localStorage.setItem('isLoggedIn', 'true')
       localStorage.setItem('currentUser', JSON.stringify({
         id: 2,
-        name: 'Faiz Rahman',
+        name: 'Faiz Rahmannnnnnnnnnnnn',
         email: email
       }))
       window.location.href = '/dashboard'

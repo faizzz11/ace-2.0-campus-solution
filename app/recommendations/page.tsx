@@ -39,17 +39,17 @@ export default function RecommendationsPage() {
   }
 
   const getMatchScoreColor = (score: number) => {
-    if (score >= 90) return "text-green-500"
+    if (score >= 90) return "text-[#e78a53]"
     if (score >= 80) return "text-[#e78a53]"
-    if (score >= 70) return "text-yellow-500"
-    return "text-gray-500"
+    if (score >= 70) return "text-[#e78a53]/80"
+    return "text-[#e78a53]/60"
   }
 
   const getMatchScoreBg = (score: number) => {
-    if (score >= 90) return "bg-green-500/10 border-green-500/20"
+    if (score >= 90) return "bg-[#e78a53]/10 border-[#e78a53]/20"
     if (score >= 80) return "bg-[#e78a53]/10 border-[#e78a53]/20"
-    if (score >= 70) return "bg-yellow-500/10 border-yellow-500/20"
-    return "bg-gray-500/10 border-gray-500/20"
+    if (score >= 70) return "bg-[#e78a53]/8 border-[#e78a53]/15"
+    return "bg-[#e78a53]/5 border-[#e78a53]/10"
   }
 
   return (
@@ -62,8 +62,8 @@ export default function RecommendationsPage() {
       >
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-8">
           <div className="flex items-center gap-4">
-            <div className="p-4 bg-gradient-to-br from-purple-500/20 to-purple-600/10 rounded-2xl border border-purple-500/20">
-              <Sparkles className="h-10 w-10 text-purple-500" />
+            <div className="p-4 bg-gradient-to-br from-[#e78a53]/20 to-[#e78a53]/10 rounded-2xl border border-[#e78a53]/20">
+              <Sparkles className="h-10 w-10 text-[#e78a53]" />
             </div>
             <div>
               <h1 className="text-4xl font-bold text-foreground mb-2">Recommendations</h1>
@@ -75,7 +75,7 @@ export default function RecommendationsPage() {
               <Star className="h-4 w-4 mr-2" />
               AI Powered
             </Badge>
-            <Badge variant="secondary" className="bg-green-500/10 text-green-500 border-green-500/20 px-4 py-2 text-sm">
+            <Badge variant="secondary" className="bg-[#e78a53]/10 text-[#e78a53] border-[#e78a53]/20 px-4 py-2 text-sm">
               <TrendingUp className="h-4 w-4 mr-2" />
               {recommendations.length} Matches
             </Badge>
