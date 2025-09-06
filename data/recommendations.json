@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "type": "club",
+    "itemId": 1,
+    "title": "AI/ML Club",
+    "category": "AI/ML",
+    "matchScore": 95,
+    "reason": "Perfect match for your Python and ML skills",
+    "description": "Join fellow AI enthusiasts for workshops and hackathons",
+    "image": "/modern-green-gradient-card.png"
+  },
+  {
+    "id": 2,
+    "type": "project",
+    "itemId": 2,
+    "title": "AI-Powered Study Assistant",
+    "category": "AI/ML",
+    "matchScore": 88,
+    "reason": "Your React and ML background makes you ideal for this project",
+    "description": "Build an intelligent study companion using cutting-edge AI",
+    "image": "/modern-green-gradient-card.png"
+  },
+  {
+    "id": 3,
+    "type": "club",
+    "itemId": 4,
+    "title": "Web Development Club",
+    "category": "Technology",
+    "matchScore": 82,
+    "reason": "Great fit for your JavaScript and React skills",
+    "description": "Learn modern web technologies and build amazing applications",
+    "image": "/modern-teal-gradient-card.png"
+  },
+  {
+    "id": 4,
+    "type": "project",
+    "itemId": 3,
+    "title": "Sustainable Campus App",
+    "category": "Mobile Development",
+    "matchScore": 78,
+    "reason": "Your frontend skills would be valuable for mobile development",
+    "description": "Create a mobile app promoting campus sustainability",
+    "image": "/modern-purple-gradient-card.png"
+  },
+  {
+    "id": 5,
+    "type": "club",
+    "itemId": 5,
+    "title": "Design Collective",
+    "category": "Design",
+    "matchScore": 75,
+    "reason": "Your UI/UX interest aligns with design community",
+    "description": "Collaborate with designers and showcase your creative work",
+    "image": "/modern-red-gradient-card.png"
+  },
+  {
+    "id": 6,
+    "type": "project",
+    "itemId": 1,
+    "title": "Smart Campus IoT System",
+    "category": "IoT",
+    "matchScore": 70,
+    "reason": "Your programming skills can contribute to IoT development",
+    "description": "Develop IoT solutions for campus optimization",
+    "image": "/modern-teal-gradient-card.png"
+  }
+]
