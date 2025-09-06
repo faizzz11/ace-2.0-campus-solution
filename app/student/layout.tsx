@@ -1,6 +1,6 @@
 import SharedLayout from "@/components/shared-layout"
 
-export default function TeamsLayout({
+export default function StudentLayout({
   children,
 }: {
   children: React.ReactNode

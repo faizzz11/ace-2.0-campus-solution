@@ -39,7 +39,7 @@ import {
 const sidebarItems = [
   {
     title: "Dashboard",
-    url: "/dashboard",
+    url: "/student/dashboard",
     icon: LayoutDashboard,
     description: "Your profile",
     color: "text-blue-500",
@@ -47,7 +47,7 @@ const sidebarItems = [
   },
   {
     title: "Leaderboard",
-    url: "/leaderboard", 
+    url: "/student/leaderboard", 
     icon: Crown,
     description: "Top performers",
     color: "text-yellow-500",
@@ -55,7 +55,7 @@ const sidebarItems = [
   },
   {
     title: "Recommendations",
-    url: "/recommendations",
+    url: "/student/recommendations",
     icon: Sparkles,
     description: "Personalized for you",
     color: "text-purple-500",
@@ -63,7 +63,7 @@ const sidebarItems = [
   },
   {
     title: "Search",
-    url: "/search",
+    url: "/student/search",
     icon: Target,
     description: "Find opportunities",
     color: "text-green-500",
@@ -71,7 +71,7 @@ const sidebarItems = [
   },
   {
     title: "Join Teams",
-    url: "/teams",
+    url: "/student/teams",
     icon: Rocket,
     description: "Open projects",
     color: "text-[#e78a53]",

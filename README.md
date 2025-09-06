@@ -122,4 +122,3 @@ For Phase 1, use any email/password combination to log in. The system will:
 ---
 
 Built with ❤️ for modern campus communities.
-this is me

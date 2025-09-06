@@ -28,7 +28,7 @@ export default function LoginPage() {
         name: 'Faiz Rahmannnnnnnnnnnnn',
         email: email
       }))
-      window.location.href = '/dashboard'
+                window.location.href = '/student/dashboard'
     }
     setIsLoading(false)
   }
