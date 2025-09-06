@@ -2,57 +2,57 @@ import { Marquee } from "@/components/magicui/marquee"
 
 const testimonials = [
   {
-    name: "Arjun Mehta",
-    username: "@arjdev",
-    body: "v0 has completely changed the way I build UIs. Generate, copy-paste, done. No more design stress.",
+    name: "Arjun Patel",
+    username: "@arjunCS",
+    body: "Reinkei helped me find the perfect robotics team for my skills. The AI matching is incredibly accurate!",
     img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
   },
   {
-    name: "Sara Lin",
-    username: "@sara.codes",
-    body: "Honestly shocked at how smooth the v0 generated components are out of the box. Just works perfectly.",
+    name: "Sarah Chen",
+    username: "@sarahdesign",
+    body: "As a club president, managing recruitment has never been easier. We found amazing new members in days.",
     img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face",
   },
   {
-    name: "Devon Carter",
-    username: "@devninja",
-    body: "Our team launched a client site in 2 days using v0 components. Saved so much development time.",
+    name: "Dr. Emily Rodriguez",
+    username: "@prof_emily",
+    body: "Found brilliant student researchers for my AI project through Reinkei. The skill-matching is spot on.",
     img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
   },
   {
-    name: "Priya Shah",
-    username: "@priyacodes",
-    body: "Generated a few components in v0 and everything blended perfectly with our codebase. Massive W.",
+    name: "Priya Sharma",
+    username: "@priya_eng",
+    body: "The gamification keeps me engaged! I love earning badges for participating in campus activities.",
     img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face",
   },
   {
-    name: "Leo Martin",
-    username: "@leobuilds",
-    body: "Found a beautiful hero section in v0, tweaked the prompt, and shipped in 15 minutes. Game changer.",
+    name: "Marcus Johnson",
+    username: "@marcusj",
+    body: "Joined 3 clubs in my first week thanks to Reinkei's recommendations. Perfect matches for my interests!",
     img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
   },
   {
-    name: "Chloe Winters",
-    username: "@chloewinters",
-    body: "v0 helped us prototype multiple landing pages without writing CSS once. Pure magic.",
+    name: "Lisa Wang",
+    username: "@lisawang",
+    body: "The event management features are fantastic. Our hackathon organization was seamless with Reinkei.",
     img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=face",
   },
   {
-    name: "Ayaan Malik",
-    username: "@ayaan_dev",
-    body: "As a solo founder, v0 lets me move fast without sacrificing design quality. Essential tool.",
+    name: "Ahmed Hassan",
+    username: "@ahmed_tech",
+    body: "Portfolio showcase helped me land a research position. Professors could see all my projects in one place.",
     img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
   },
   {
-    name: "Monica Reeves",
-    username: "@monicareeves",
-    body: "Can't believe how polished the v0 generated components look. Clients are impressed every time.",
+    name: "Rachel Kim",
+    username: "@rachelk",
+    body: "The in-app chat feature makes coordinating with team members so much easier than email chains.",
     img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face",
   },
   {
-    name: "James Roy",
-    username: "@jamesrdev",
-    body: "v0 is a lifesaver when deadlines are tight. Generate a component, tweak, and deploy instantly.",
+    name: "James Thompson",
+    username: "@jamest",
+    body: "Reinkei transformed our campus engagement. Student participation in clubs increased by 40%!",
     img: "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=150&h=150&fit=crop&crop=face",
   },
 ]
@@ -109,7 +109,7 @@ export function TestimonialsSection() {
           </h2>
 
           <p className="mt-5 relative z-10 text-center text-lg text-zinc-500">
-            From intuitive design to powerful features, our app has become an essential tool for users around the world.
+            From students to faculty, Reinkei is transforming how campus communities connect and collaborate.
           </p>
         </div>
 
