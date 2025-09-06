@@ -166,7 +166,7 @@ export default function SharedLayout({
                   </svg>
                 </div>
                 <div>
-                  <h2 className="text-xl font-bold text-foreground">Campus Connect</h2>
+                  <h2 className="text-xl font-bold text-foreground">Renkei</h2>
                   <p className="text-sm text-muted-foreground">Student Portal</p>
                 </div>
               </div>

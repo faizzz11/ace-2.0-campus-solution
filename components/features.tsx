@@ -90,6 +90,20 @@ export default function Features() {
                     <p className="max-w-[460px]">
                       AI-driven recommendations for clubs, teams, and faculty initiatives based on your skills, interests, and academic goals.
                     </p>
+                    <ul className="mt-2 space-y-1 text-xs">
+                      <li className="flex items-center gap-2">
+                        <span className="text-[#e78a53]">✓</span>
+                        Smart club recommendations based on interests
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <span className="text-[#e78a53]">✓</span>
+                        Match with research projects by skills
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <span className="text-[#e78a53]">✓</span>
+                        Connect with like-minded students
+                      </li>
+                    </ul>
                   </div>
                 </div>
                 <div className="pointer-events-none flex grow items-center justify-center select-none relative">
@@ -160,9 +174,9 @@ export default function Features() {
                     {/* Main Content Container with Staggered Animations */}
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="flex items-center gap-8">
-                        {/* Left Column */}
+                        {/* Left Column - Club & Team Features */}
                         <div className="flex flex-col gap-3">
-                          {["Feature-1", "Feature-1", "Feature-1"].map((item, index) => (
+                          {["AI Club Match", "Team Finder", "Project Teams"].map((item, index) => (
                             <motion.div
                               key={`left-${index}`}
                               className="bg-white rounded px-3 py-2 flex items-center gap-2 text-black text-sm font-medium shadow-sm"
@@ -175,9 +189,9 @@ export default function Features() {
                               whileHover={{ scale: 1.05 }}
                             >
                               <div className="w-4 h-4 flex items-center justify-center">
-                                {index === 0 && <span className="text-xs">📄</span>}
-                                {index === 1 && <span className="text-xs">💰</span>}
-                                {index === 2 && <span className="text-xs">🏢</span>}
+                                {index === 0 && <span className="text-xs">🎯</span>}
+                                {index === 1 && <span className="text-xs">👥</span>}
+                                {index === 2 && <span className="text-xs">🚀</span>}
                               </div>
                               {item}
                             </motion.div>
@@ -199,9 +213,9 @@ export default function Features() {
                           />
                         </motion.div>
 
-                        {/* Right Column */}
+                        {/* Right Column - Academic Features */}
                         <div className="flex flex-col gap-3">
-                          {["Feature-1", "Feature-1", "Feature-1"].map((item, index) => (
+                          {["Faculty Connect", "Skill Matching", "Event Discovery"].map((item, index) => (
                             <motion.div
                               key={`right-${index}`}
                               className="bg-white rounded px-3 py-2 flex items-center gap-2 text-black text-sm font-medium shadow-sm"
@@ -214,9 +228,9 @@ export default function Features() {
                               whileHover={{ scale: 1.05 }}
                             >
                               <div className="w-4 h-4 flex items-center justify-center">
-                                {index === 0 && <span className="text-xs">👥</span>}
-                                {index === 1 && <span className="text-xs">💳</span>}
-                                {index === 2 && <span className="text-xs">👨‍⚕️</span>}
+                                {index === 0 && <span className="text-xs">🎓</span>}
+                                {index === 1 && <span className="text-xs">⚡</span>}
+                                {index === 2 && <span className="text-xs">📅</span>}
                               </div>
                               {item}
                             </motion.div>
@@ -278,13 +292,14 @@ export default function Features() {
                     <p className="max-w-[460px]">
                       Create comprehensive profiles showcasing your skills, achievements, past projects, and certifications to stand out.
                     </p>
+
                   </div>
                 </div>
                 <div className="flex min-h-[300px] grow items-start justify-center select-none">
                   <h1 className="mt-8 text-center text-5xl leading-[100%] font-semibold sm:leading-normal lg:mt-12 lg:text-6xl">
                     <span className='bg-background relative mt-3 inline-block w-fit rounded-md border px-1.5 py-0.5 before:absolute before:top-0 before:left-0 before:z-10 before:h-full before:w-full before:bg-[url("/noise.gif")] before:opacity-[0.09] before:content-[""]'>
                       <ScrambleHover
-                        text="feature-2"
+                        text="Showcase"
                         scrambleSpeed={70}
                         maxIterations={20}
                         useOriginalCharsOnly={false}
