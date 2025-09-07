@@ -54,7 +54,7 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="mx-auto mb-12 max-w-2xl text-lg text-muted-foreground"
             >
-              Reinkei's AI-powered platform connects students with clubs, project teams, and faculty initiatives. 
+              Reinkei's AI-powered platform connects students with clubs, project teams, and faculty initiatives.
               Get personalized recommendations based on your skills, interests, and academic goals.
             </motion.p>
 
@@ -82,7 +82,7 @@ export default function Hero() {
 
               {/* Get started button */}
               <div className="flex items-center justify-center">
-                <a href="/docs/components/theme-toggle-animations">
+                <a href="/signup">
                   <div className="group cursor-pointer border border-border bg-card gap-2 h-[60px] flex items-center p-[10px] rounded-full">
                     <div className="border border-border bg-primary h-[40px] rounded-full flex items-center justify-center text-primary-foreground">
                       <p className="font-medium tracking-tight mr-3 ml-3 flex items-center gap-2 justify-center text-base">
@@ -173,7 +173,7 @@ export default function Hero() {
                   </svg>
                 </div>
 
-              
+
                 {/* Next.js Logo */}
                 <div className="opacity-60 grayscale hover:opacity-100 hover:grayscale-0 hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.3)] transition-all duration-300">
                   <svg

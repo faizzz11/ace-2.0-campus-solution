@@ -6,40 +6,40 @@ import { useState } from "react"
 
 const pricingPlans = [
   {
-    name: "Starter",
+    name: "Student",
     price: "Free",
-    description: "Perfect for getting started with v0",
-    features: ["5 components per month", "Basic templates", "Community support", "Standard components"],
+    description: "Perfect for individual students to get started",
+    features: ["Basic recommendations", "Join up to 3 clubs", "Project participation", "Activity tracking", "Community access"],
     popular: false,
     cta: "Get Started",
   },
   {
-    name: "Pro",
-    monthlyPrice: 29,
-    annualPrice: 24,
-    description: "For professionals building serious projects",
+    name: "Premium Student",
+    monthlyPrice: 9,
+    annualPrice: 7,
+    description: "Enhanced features for serious academic growth",
     features: [
-      "Unlimited components",
-      "Premium templates",
-      "Priority support",
-      "Advanced animations",
-      "Custom themes",
-      "Export to GitHub",
+      "AI-powered recommendations",
+      "Unlimited club memberships",
+      "Priority project matching",
+      "Advanced analytics",
+      "Mentorship access",
+      "Leadership opportunities",
     ],
     popular: true,
     cta: "Start Free Trial",
   },
   {
-    name: "Team",
-    monthlyPrice: 99,
-    annualPrice: 79,
-    description: "For teams collaborating on projects",
+    name: "Institution",
+    monthlyPrice: 299,
+    annualPrice: 249,
+    description: "Complete solution for universities and colleges",
     features: [
-      "Everything in Pro",
-      "Team collaboration",
-      "Shared component library",
-      "Advanced analytics",
-      "Custom integrations",
+      "Campus-wide deployment",
+      "Custom branding",
+      "Admin dashboard",
+      "Faculty integration",
+      "Advanced reporting",
       "Dedicated support",
     ],
     popular: false,
@@ -77,7 +77,7 @@ export function PricingSection() {
           </h2>
 
           <p className="text-lg text-white/60 max-w-2xl mx-auto mb-8">
-            Start building beautiful components today. Upgrade anytime as your needs grow.
+            Start connecting with your campus community today. Upgrade anytime to unlock advanced features.
           </p>
 
           {/* Monthly/Annual Toggle */}
@@ -90,17 +90,15 @@ export function PricingSection() {
           >
             <button
               onClick={() => setIsAnnual(false)}
-              className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
-                !isAnnual ? "bg-[#e78a53] text-white shadow-lg" : "text-white/60 hover:text-white/80"
-              }`}
+              className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-200 ${!isAnnual ? "bg-[#e78a53] text-white shadow-lg" : "text-white/60 hover:text-white/80"
+                }`}
             >
               Monthly
             </button>
             <button
               onClick={() => setIsAnnual(true)}
-              className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-200 relative ${
-                isAnnual ? "bg-[#e78a53] text-white shadow-lg" : "text-white/60 hover:text-white/80"
-              }`}
+              className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-200 relative ${isAnnual ? "bg-[#e78a53] text-white shadow-lg" : "text-white/60 hover:text-white/80"
+                }`}
             >
               Annual
               <span className="absolute -top-2 -right-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded-full">
@@ -120,11 +118,10 @@ export function PricingSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -5 }}
-              className={`relative rounded-2xl p-8 backdrop-blur-sm border transition-all duration-300 ${
-                plan.popular
-                  ? "bg-gradient-to-b from-[#e78a53]/10 to-transparent border-[#e78a53]/30 shadow-lg shadow-[#e78a53]/10"
-                  : "bg-white/5 border-white/10 hover:border-white/20"
-              }`}
+              className={`relative rounded-2xl p-8 backdrop-blur-sm border transition-all duration-300 ${plan.popular
+                ? "bg-gradient-to-b from-[#e78a53]/10 to-transparent border-[#e78a53]/30 shadow-lg shadow-[#e78a53]/10"
+                : "bg-white/5 border-white/10 hover:border-white/20"
+                }`}
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -160,17 +157,17 @@ export function PricingSection() {
                 ))}
               </ul>
 
-              <motion.button
+              <motion.a
+                href={plan.name === "Student" ? "/signup" : plan.name === "Premium Student" ? "/signup" : "/login"}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className={`w-full py-3 px-6 rounded-lg font-medium transition-all duration-200 ${
-                  plan.popular
-                    ? "bg-gradient-to-r from-[#e78a53] to-[#e78a53]/80 text-white shadow-lg shadow-[#e78a53]/25 hover:shadow-[#e78a53]/40"
-                    : "bg-white/10 text-white border border-white/20 hover:bg-white/20"
-                }`}
+                className={`w-full py-3 px-6 rounded-lg font-medium transition-all duration-200 text-center block ${plan.popular
+                  ? "bg-gradient-to-r from-[#e78a53] to-[#e78a53]/80 text-white shadow-lg shadow-[#e78a53]/25 hover:shadow-[#e78a53]/40"
+                  : "bg-white/10 text-white border border-white/20 hover:bg-white/20"
+                  }`}
               >
                 {plan.cta}
-              </motion.button>
+              </motion.a>
             </motion.div>
           ))}
         </div>

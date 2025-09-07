@@ -43,7 +43,7 @@ import {
 export default function SignupPage() {
   const [currentStep, setCurrentStep] = useState(1)
   const [isLoading, setIsLoading] = useState(false)
-  
+
   const [formData, setFormData] = useState({
     // Section 1: About
     email: "",
@@ -55,21 +55,21 @@ export default function SignupPage() {
     gender: "",
     city: "",
     bio: "",
-    
+
     // Section 2: Education  
     degreeType: "",
     fieldOfStudy: "",
     institution: "",
     graduationYear: "",
-    
+
     // Section 3: Experience
     resume: null as File | null,
     descriptions: [] as string[],
     skills: [] as string[],
-    workExperience: [] as Array<{id: string, title: string, company: string, duration: string, type: string}>,
-    
+    workExperience: [] as Array<{ id: string, title: string, company: string, duration: string, type: string }>,
+
     // Section 4: Links
-    links: [] as Array<{id: string, platform: string, url: string}>
+    links: [] as Array<{ id: string, platform: string, url: string }>
   })
 
   const [newSkill, setNewSkill] = useState("")
@@ -124,7 +124,7 @@ export default function SignupPage() {
   const updateWorkExperience = (id: string, field: string, value: string) => {
     setFormData(prev => ({
       ...prev,
-      workExperience: prev.workExperience.map(exp => 
+      workExperience: prev.workExperience.map(exp =>
         exp.id === id ? { ...exp, [field]: value } : exp
       )
     }))
@@ -173,7 +173,7 @@ export default function SignupPage() {
   const handleSubmit = async () => {
     setIsLoading(true)
     await new Promise(resolve => setTimeout(resolve, 2000))
-    
+
     // Store user data in localStorage
     localStorage.setItem('userData', JSON.stringify(formData))
     localStorage.setItem('isLoggedIn', 'true')
@@ -182,7 +182,7 @@ export default function SignupPage() {
       name: `${formData.firstName} ${formData.lastName}`,
       email: formData.email
     }))
-    
+
     setIsLoading(false)
     window.location.href = '/student/dashboard'
   }
@@ -221,7 +221,7 @@ export default function SignupPage() {
                   />
                 </div>
               </div>
-              
+
               <div className="space-y-2">
                 <Label className="text-foreground flex items-center gap-2">
                   <Mail className="h-4 w-4 text-[#e78a53]" />
@@ -235,7 +235,7 @@ export default function SignupPage() {
                   className="bg-background/50 border-border/50"
                 />
               </div>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label className="text-foreground flex items-center gap-2">
@@ -261,7 +261,7 @@ export default function SignupPage() {
                   />
                 </div>
               </div>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label className="text-foreground flex items-center gap-2">
@@ -290,7 +290,7 @@ export default function SignupPage() {
                   </Select>
                 </div>
               </div>
-              
+
               <div className="space-y-2">
                 <Label className="text-foreground flex items-center gap-2">
                   <MapPin className="h-4 w-4 text-[#e78a53]" />
@@ -303,7 +303,7 @@ export default function SignupPage() {
                   className="bg-background/50 border-border/50"
                 />
               </div>
-              
+
               <div className="space-y-2">
                 <Label className="text-foreground flex items-center gap-2">
                   <FileText className="h-4 w-4 text-[#e78a53]" />
@@ -319,7 +319,7 @@ export default function SignupPage() {
             </CardContent>
           </Card>
         )
-      
+
       case 2:
         return (
           <Card className="bg-card/50 border-border/50 backdrop-blur-sm">
@@ -362,7 +362,7 @@ export default function SignupPage() {
                   />
                 </div>
               </div>
-              
+
               <div className="space-y-2">
                 <Label className="text-foreground flex items-center gap-2">
                   <Building className="h-4 w-4 text-[#e78a53]" />
@@ -375,7 +375,7 @@ export default function SignupPage() {
                   className="bg-background/50 border-border/50"
                 />
               </div>
-              
+
               <div className="space-y-2">
                 <Label className="text-foreground flex items-center gap-2">
                   <Calendar className="h-4 w-4 text-[#e78a53]" />
@@ -395,7 +395,7 @@ export default function SignupPage() {
             </CardContent>
           </Card>
         )
-      
+
       case 3:
         return (
           <Card className="bg-card/50 border-border/50 backdrop-blur-sm">
@@ -430,7 +430,7 @@ export default function SignupPage() {
                   </label>
                 </div>
               </div>
-              
+
               <div className="space-y-4">
                 <Label className="text-foreground">What Describes You Best?</Label>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -438,18 +438,16 @@ export default function SignupPage() {
                     <div
                       key={desc.id}
                       onClick={() => handleDescriptionToggle(desc.id)}
-                      className={`p-3 rounded-lg border cursor-pointer transition-all duration-200 ${
-                        formData.descriptions.includes(desc.id)
+                      className={`p-3 rounded-lg border cursor-pointer transition-all duration-200 ${formData.descriptions.includes(desc.id)
                           ? 'bg-[#e78a53]/10 border-[#e78a53]/30'
                           : 'bg-background/30 border-border/30 hover:bg-background/50'
-                      }`}
+                        }`}
                     >
                       <div className="flex items-center gap-3">
-                        <div className={`p-2 rounded-lg ${
-                          formData.descriptions.includes(desc.id) 
-                            ? 'bg-[#e78a53]/20' 
+                        <div className={`p-2 rounded-lg ${formData.descriptions.includes(desc.id)
+                            ? 'bg-[#e78a53]/20'
                             : 'bg-muted/50'
-                        }`}>
+                          }`}>
                           {desc.icon}
                         </div>
                         <span className="text-sm font-medium text-foreground">{desc.label}</span>
@@ -458,7 +456,7 @@ export default function SignupPage() {
                   ))}
                 </div>
               </div>
-              
+
               <div className="space-y-4">
                 <Label className="text-foreground">Skills</Label>
                 <div className="flex gap-2">
@@ -477,15 +475,15 @@ export default function SignupPage() {
                   {formData.skills.map((skill) => (
                     <Badge key={skill} variant="secondary" className="bg-[#e78a53]/10 text-[#e78a53]">
                       {skill}
-                      <X 
-                        className="h-3 w-3 ml-1 cursor-pointer" 
+                      <X
+                        className="h-3 w-3 ml-1 cursor-pointer"
                         onClick={() => removeSkill(skill)}
                       />
                     </Badge>
                   ))}
                 </div>
               </div>
-              
+
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
                   <Label className="text-foreground">Work Experience (Optional)</Label>
@@ -529,9 +527,9 @@ export default function SignupPage() {
                             </SelectContent>
                           </Select>
                         </div>
-                        <Button 
+                        <Button
                           onClick={() => removeWorkExperience(exp.id)}
-                          variant="ghost" 
+                          variant="ghost"
                           size="icon"
                           className="text-red-500 hover:text-red-600"
                         >
@@ -545,7 +543,7 @@ export default function SignupPage() {
             </CardContent>
           </Card>
         )
-      
+
       case 4:
         return (
           <Card className="bg-card/50 border-border/50 backdrop-blur-sm">
@@ -562,7 +560,7 @@ export default function SignupPage() {
                 <Label className="text-foreground">Social & Professional Links</Label>
                 <div className="space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <Select value={newLink.platform} onValueChange={(value) => setNewLink({...newLink, platform: value})}>
+                    <Select value={newLink.platform} onValueChange={(value) => setNewLink({ ...newLink, platform: value })}>
                       <SelectTrigger className="bg-background/50 border-border/50">
                         <SelectValue placeholder="Platform" />
                       </SelectTrigger>
@@ -579,7 +577,7 @@ export default function SignupPage() {
                     <Input
                       placeholder="URL"
                       value={newLink.url}
-                      onChange={(e) => setNewLink({...newLink, url: e.target.value})}
+                      onChange={(e) => setNewLink({ ...newLink, url: e.target.value })}
                       className="bg-background/50 border-border/50"
                     />
                     <Button onClick={addLink} className="bg-[#e78a53] hover:bg-[#e78a53]/90">
@@ -588,7 +586,7 @@ export default function SignupPage() {
                     </Button>
                   </div>
                 </div>
-                
+
                 <div className="space-y-3">
                   {formData.links.map((link) => (
                     <div key={link.id} className="flex items-center justify-between p-3 bg-background/30 rounded-lg border border-border/30">
@@ -603,9 +601,9 @@ export default function SignupPage() {
                           <p className="text-sm text-muted-foreground">{link.url}</p>
                         </div>
                       </div>
-                      <Button 
+                      <Button
                         onClick={() => removeLink(link.id)}
-                        variant="ghost" 
+                        variant="ghost"
                         size="icon"
                         className="text-red-500 hover:text-red-600"
                       >
@@ -618,7 +616,7 @@ export default function SignupPage() {
             </CardContent>
           </Card>
         )
-      
+
       default:
         return null
     }
@@ -645,20 +643,6 @@ export default function SignupPage() {
         className="relative z-10 w-full max-w-4xl"
       >
         <div className="text-center mb-8">
-          <Link href="/" className="inline-block mb-6">
-            <div className="flex items-center justify-center space-x-2">
-              <svg
-                fill="currentColor"
-                viewBox="0 0 147 70"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-                className="text-[#e78a53] rounded-full size-8 w-8"
-              >
-                <path d="M56 50.2031V14H70V60.1562C70 65.5928 65.5928 70 60.1562 70C57.5605 70 54.9982 68.9992 53.1562 67.1573L0 14H19.7969L56 50.2031Z"></path>
-                <path d="M147 56H133V23.9531L100.953 56H133V70H96.6875C85.8144 70 77 61.1856 77 50.3125V14H91V46.1562L123.156 14H91V0H127.312C138.186 0 147 8.81439 147 19.6875V56Z"></path>
-              </svg>
-            </div>
-          </Link>
           <h1 className="text-4xl font-bold text-white mb-2">Create Your Account</h1>
           <p className="text-zinc-400">Join our campus community in just 4 simple steps</p>
         </div>
@@ -667,17 +651,15 @@ export default function SignupPage() {
           <div className="flex items-center gap-4">
             {[1, 2, 3, 4].map((step) => (
               <div key={step} className="flex items-center">
-                <div className={`w-10 h-10 rounded-full flex items-center justify-center border-2 transition-all duration-300 ${
-                  currentStep >= step 
-                    ? 'bg-[#e78a53] border-[#e78a53] text-white' 
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center border-2 transition-all duration-300 ${currentStep >= step
+                    ? 'bg-[#e78a53] border-[#e78a53] text-white'
                     : 'bg-transparent border-zinc-600 text-zinc-600'
-                }`}>
+                  }`}>
                   {currentStep > step ? <CheckCircle className="h-5 w-5" /> : step}
                 </div>
                 {step < 4 && (
-                  <div className={`w-12 h-0.5 mx-2 transition-all duration-300 ${
-                    currentStep > step ? 'bg-[#e78a53]' : 'bg-zinc-600'
-                  }`} />
+                  <div className={`w-12 h-0.5 mx-2 transition-all duration-300 ${currentStep > step ? 'bg-[#e78a53]' : 'bg-zinc-600'
+                    }`} />
                 )}
               </div>
             ))}
@@ -704,7 +686,7 @@ export default function SignupPage() {
             <ChevronLeft className="h-4 w-4" />
             Previous
           </Button>
-          
+
           {currentStep < 4 ? (
             <Button
               onClick={nextStep}
@@ -726,13 +708,13 @@ export default function SignupPage() {
         </div>
 
         <div className="mt-8 text-center">
-            <p className="text-zinc-400">
-              Already have an account?{" "}
-              <Link href="/login" className="text-[#e78a53] hover:text-[#e78a53]/80 font-medium">
-                Sign in
-              </Link>
-            </p>
-          </div>
+          <p className="text-zinc-400">
+            Already have an account?{" "}
+            <Link href="/login" className="text-[#e78a53] hover:text-[#e78a53]/80 font-medium">
+              Sign in
+            </Link>
+          </p>
+        </div>
       </motion.div>
     </div>
   )
