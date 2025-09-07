@@ -663,7 +663,7 @@ export default function SignupPage() {
                 )}
               </div>
             ))}
-          </div>
+            </div>
         </div>
 
         <motion.div
@@ -708,13 +708,13 @@ export default function SignupPage() {
         </div>
 
         <div className="mt-8 text-center">
-          <p className="text-zinc-400">
-            Already have an account?{" "}
-            <Link href="/login" className="text-[#e78a53] hover:text-[#e78a53]/80 font-medium">
-              Sign in
-            </Link>
-          </p>
-        </div>
+            <p className="text-zinc-400">
+              Already have an account?{" "}
+              <Link href="/login" className="text-[#e78a53] hover:text-[#e78a53]/80 font-medium">
+                Sign in
+              </Link>
+            </p>
+          </div>
       </motion.div>
     </div>
   )

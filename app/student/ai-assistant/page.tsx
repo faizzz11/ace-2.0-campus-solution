@@ -281,8 +281,8 @@ export default function StudentAIAssistantPage() {
     )
 
     return (
-        <div className="h-screen bg-gradient-to-br from-background via-background to-muted/20 p-4 overflow-hidden">
-            <div className="h-full flex flex-col max-w-4xl mx-auto">
+        <div className="h-screen w-full bg-gradient-to-br from-background via-background to-muted/20 overflow-hidden">
+            <div className="h-full w-full flex flex-col">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
