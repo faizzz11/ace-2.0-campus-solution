@@ -43,6 +43,10 @@ import {
   Crown,
   Target,
   Rocket,
+  MessageCircle,
+  Bot,
+  Video,
+  FileText,
 } from "lucide-react"
 
 const sidebarItems = [
@@ -56,7 +60,7 @@ const sidebarItems = [
   },
   {
     title: "Leaderboard",
-    url: "/student/leaderboard", 
+    url: "/student/leaderboard",
     icon: Crown,
     description: "Top performers",
     color: "text-yellow-500",
@@ -87,6 +91,38 @@ const sidebarItems = [
     bgColor: "bg-[#e78a53]/10",
   },
   {
+    title: "Messages",
+    url: "/student/chat",
+    icon: MessageCircle,
+    description: "Chat with faculty",
+    color: "text-indigo-500",
+    bgColor: "bg-indigo-500/10",
+  },
+  {
+    title: "AI Assistant",
+    url: "/student/ai-assistant",
+    icon: Bot,
+    description: "Smart recommendations",
+    color: "text-pink-500",
+    bgColor: "bg-pink-500/10",
+  },
+  {
+    title: "AI Interviewer",
+    url: "/student/ai-interviewer",
+    icon: Video,
+    description: "Practice interviews",
+    color: "text-cyan-500",
+    bgColor: "bg-cyan-500/10",
+  },
+  {
+    title: "Resume AI",
+    url: "/student/ai-resume",
+    icon: FileText,
+    description: "Analyze & improve",
+    color: "text-emerald-500",
+    bgColor: "bg-emerald-500/10",
+  },
+  {
     title: "Profile",
     url: "/student/profile",
     icon: Settings,
@@ -113,12 +149,12 @@ export default function SharedLayout({
 
     const isLoggedIn = localStorage.getItem('isLoggedIn')
     const userData = localStorage.getItem('currentUser')
-    
+
     if (!isLoggedIn || !userData) {
       router.push('/login')
       return
     }
-    
+
     setCurrentUser(JSON.parse(userData))
     setIsLoading(false)
   }, [router])
@@ -148,22 +184,14 @@ export default function SharedLayout({
           background: "radial-gradient(ellipse 50% 35% at 50% 0%, rgba(226, 232, 240, 0.08), transparent 60%), #000000",
         }}
       />
-      
+
       <SidebarProvider>
         <div className="flex min-h-screen relative z-10">
           <Sidebar className="border-r border-border/20 bg-black/50 backdrop-blur-xl">
             <SidebarHeader className="border-b border-border/20 p-6">
               <div className="flex items-center gap-3">
                 <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-[#e78a53] to-[#e78a53]/80 rounded-xl shadow-lg">
-                  <svg
-                    fill="currentColor"
-                    viewBox="0 0 147 70"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="text-white size-5"
-                  >
-                    <path d="M56 50.2031V14H70V60.1562C70 65.5928 65.5928 70 60.1562 70C57.5605 70 54.9982 68.9992 53.1562 67.1573L0 14H19.7969L56 50.2031Z"></path>
-                    <path d="M147 56H133V23.9531L100.953 56H133V70H96.6875C85.8144 70 77 61.1856 77 50.3125V14H91V46.1562L123.156 14H91V0H127.312C138.186 0 147 8.81439 147 19.6875V56Z"></path>
-                  </svg>
+                  <span className="text-white font-bold text-lg">R</span>
                 </div>
                 <div>
                   <h2 className="text-xl font-bold text-foreground">Renkei</h2>
@@ -171,7 +199,7 @@ export default function SharedLayout({
                 </div>
               </div>
             </SidebarHeader>
-            
+
             <SidebarContent className="px-4 py-6">
               <SidebarGroup>
                 <SidebarGroupLabel className="text-sm font-semibold text-foreground mb-4 px-2">
@@ -183,13 +211,12 @@ export default function SharedLayout({
                       const isActive = pathname === item.url
                       return (
                         <SidebarMenuItem key={item.title}>
-                          <SidebarMenuButton 
-                            asChild 
-                            className={`h-12 px-4 ${
-                              isActive 
-                                ? 'bg-[#e78a53]/10 border border-[#e78a53]/20 text-[#e78a53]' 
-                                : 'hover:bg-accent/50 text-foreground'
-                            } rounded-xl transition-all duration-200`}
+                          <SidebarMenuButton
+                            asChild
+                            className={`h-12 px-4 ${isActive
+                              ? 'bg-[#e78a53]/10 border border-[#e78a53]/20 text-[#e78a53]'
+                              : 'hover:bg-accent/50 text-foreground'
+                              } rounded-xl transition-all duration-200`}
                           >
                             <a href={item.url} className="flex items-center gap-4 w-full">
                               <div className={`p-2 rounded-lg ${isActive ? 'bg-[#e78a53]/20' : item.bgColor}`}>
@@ -215,7 +242,7 @@ export default function SharedLayout({
                 </SidebarGroupContent>
               </SidebarGroup>
             </SidebarContent>
-            
+
             <SidebarFooter className="border-t border-border/20 p-4">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
@@ -257,7 +284,7 @@ export default function SharedLayout({
               </DropdownMenu>
             </SidebarFooter>
           </Sidebar>
-          
+
           <SidebarInset className="flex-1">
             <header className="sticky top-0 z-50 w-full border-b border-border/20 bg-black/80 backdrop-blur-xl">
               <div className="flex h-16 items-center px-6">
@@ -284,7 +311,7 @@ export default function SharedLayout({
                 </div>
               </div>
             </header>
-            
+
             <main className="flex-1 w-full min-h-screen">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}

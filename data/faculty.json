@@ -1,0 +1,218 @@
+[
+  {
+    "id": 1,
+    "name": "Dr. Sarah Wilson",
+    "email": "sarah.wilson@university.edu",
+    "department": "Computer Science",
+    "position": "Professor",
+    "specialization": [
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Data Science"
+    ],
+    "office": "Tech Building 301",
+    "officeHours": "Monday & Wednesday 2-4 PM",
+    "bio": "Dr. Wilson is a leading researcher in AI and machine learning with over 15 years of experience in both industry and academia.",
+    "courses": [
+      "CS 301 - AI Fundamentals",
+      "CS 450 - Advanced ML",
+      "CS 520 - Deep Learning"
+    ],
+    "research": [
+      "Deep Learning",
+      "Computer Vision",
+      "Natural Language Processing"
+    ],
+    "publications": 45,
+    "experience": "15 years",
+    "education": "PhD in Computer Science - MIT",
+    "status": "active",
+    "image": "/avatars/faculty-1.jpg",
+    "mentorship": {
+      "available": true,
+      "areas": ["AI Research", "Career Guidance", "PhD Applications"],
+      "capacity": 5,
+      "currentMentees": 3
+    }
+  },
+  {
+    "id": 2,
+    "name": "Prof. Michael Chen",
+    "email": "michael.chen@university.edu",
+    "department": "Computer Science",
+    "position": "Associate Professor",
+    "specialization": [
+      "Software Engineering",
+      "Web Development",
+      "Database Systems"
+    ],
+    "office": "Tech Building 205",
+    "officeHours": "Tuesday & Thursday 1-3 PM",
+    "bio": "Prof. Chen specializes in modern software development practices and has extensive industry experience at leading tech companies.",
+    "courses": [
+      "CS 250 - Software Engineering",
+      "CS 350 - Database Systems",
+      "CS 410 - Advanced Web Development"
+    ],
+    "research": ["Software Architecture", "Cloud Computing", "DevOps"],
+    "publications": 28,
+    "experience": "12 years",
+    "education": "PhD in Software Engineering - Stanford",
+    "status": "active",
+    "image": "/avatars/faculty-2.jpg",
+    "mentorship": {
+      "available": true,
+      "areas": [
+        "Software Development",
+        "Industry Transition",
+        "Technical Leadership"
+      ],
+      "capacity": 6,
+      "currentMentees": 4
+    }
+  },
+  {
+    "id": 3,
+    "name": "Dr. Emily Green",
+    "email": "emily.green@university.edu",
+    "department": "Environmental Engineering",
+    "position": "Professor",
+    "specialization": [
+      "Sustainable Energy",
+      "Environmental Monitoring",
+      "Green Technology"
+    ],
+    "office": "Science Building 405",
+    "officeHours": "Friday 10 AM - 12 PM",
+    "bio": "Dr. Green is an expert in sustainable technologies and environmental conservation with multiple patents in renewable energy.",
+    "courses": [
+      "ENV 201 - Environmental Systems",
+      "ENV 401 - Renewable Energy",
+      "ENV 550 - Sustainability Research"
+    ],
+    "research": ["Solar Energy", "Environmental Sensors", "Sustainability"],
+    "publications": 38,
+    "experience": "14 years",
+    "education": "PhD in Environmental Engineering - UC Berkeley",
+    "status": "active",
+    "image": "/avatars/faculty-3.jpg",
+    "mentorship": {
+      "available": true,
+      "areas": [
+        "Environmental Research",
+        "Sustainability Projects",
+        "Graduate Studies"
+      ],
+      "capacity": 4,
+      "currentMentees": 2
+    }
+  },
+  {
+    "id": 4,
+    "name": "Dr. James Rodriguez",
+    "email": "james.rodriguez@university.edu",
+    "department": "Data Science",
+    "position": "Assistant Professor",
+    "specialization": [
+      "Data Analytics",
+      "Business Intelligence",
+      "Statistical Modeling"
+    ],
+    "office": "Analytics Center 110",
+    "officeHours": "Wednesday 3-5 PM",
+    "bio": "Dr. Rodriguez brings industry expertise from Fortune 500 companies, specializing in turning data into actionable business insights.",
+    "courses": [
+      "DS 101 - Introduction to Data Science",
+      "DS 301 - Advanced Analytics",
+      "DS 420 - Business Intelligence"
+    ],
+    "research": [
+      "Predictive Analytics",
+      "Business Intelligence",
+      "Data Visualization"
+    ],
+    "publications": 22,
+    "experience": "8 years",
+    "education": "PhD in Statistics - University of Chicago",
+    "status": "active",
+    "image": "/avatars/faculty-4.jpg",
+    "mentorship": {
+      "available": true,
+      "areas": [
+        "Data Science Career",
+        "Analytics Projects",
+        "Industry Internships"
+      ],
+      "capacity": 7,
+      "currentMentees": 5
+    }
+  },
+  {
+    "id": 5,
+    "name": "Prof. Lisa Kim",
+    "email": "lisa.kim@university.edu",
+    "department": "Design",
+    "position": "Associate Professor",
+    "specialization": [
+      "UI/UX Design",
+      "Human-Computer Interaction",
+      "Design Thinking"
+    ],
+    "office": "Design Studio 220",
+    "officeHours": "Monday & Friday 1-3 PM",
+    "bio": "Prof. Kim is an award-winning designer with experience at top design agencies and a passion for user-centered design.",
+    "courses": [
+      "DES 201 - UI/UX Fundamentals",
+      "DES 350 - Human-Computer Interaction",
+      "DES 450 - Advanced Design Systems"
+    ],
+    "research": ["User Experience", "Accessibility Design", "Design Systems"],
+    "publications": 18,
+    "experience": "10 years",
+    "education": "MFA in Design - RISD",
+    "status": "active",
+    "image": "/avatars/faculty-5.jpg",
+    "mentorship": {
+      "available": true,
+      "areas": ["Design Portfolio", "UX Research", "Design Career"],
+      "capacity": 8,
+      "currentMentees": 6
+    }
+  },
+  {
+    "id": 6,
+    "name": "Dr. Robert Thompson",
+    "email": "robert.thompson@university.edu",
+    "department": "Cybersecurity",
+    "position": "Professor",
+    "specialization": ["Network Security", "Ethical Hacking", "Cryptography"],
+    "office": "Security Lab 315",
+    "officeHours": "Thursday 2-4 PM",
+    "bio": "Dr. Thompson is a cybersecurity expert with government and private sector experience, specializing in network defense and ethical hacking.",
+    "courses": [
+      "CS 380 - Network Security",
+      "CS 480 - Ethical Hacking",
+      "CS 580 - Advanced Cryptography"
+    ],
+    "research": [
+      "Network Defense",
+      "Penetration Testing",
+      "Blockchain Security"
+    ],
+    "publications": 32,
+    "experience": "16 years",
+    "education": "PhD in Computer Science - Carnegie Mellon",
+    "status": "active",
+    "image": "/avatars/faculty-6.jpg",
+    "mentorship": {
+      "available": true,
+      "areas": [
+        "Cybersecurity Career",
+        "Security Research",
+        "Certification Guidance"
+      ],
+      "capacity": 6,
+      "currentMentees": 4
+    }
+  }
+]

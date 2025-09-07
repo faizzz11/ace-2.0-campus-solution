@@ -1,0 +1,208 @@
+[
+  {
+    "id": 1,
+    "participants": ["student_1", "admin_1"],
+    "participantDetails": {
+      "student_1": {
+        "name": "Alex Johnson",
+        "role": "student",
+        "avatar": "/avatars/student-1.jpg",
+        "department": "Computer Science",
+        "year": "3rd Year"
+      },
+      "admin_1": {
+        "name": "Dr. Sarah Wilson",
+        "role": "admin",
+        "avatar": "/avatars/faculty-1.jpg",
+        "department": "Computer Science",
+        "position": "Professor"
+      }
+    },
+    "lastMessage": "Thanks for the clarification on the project requirements!",
+    "lastMessageTime": "2024-01-15T14:30:00Z",
+    "unreadCount": 0,
+    "status": "active",
+    "subject": "AI Research Project Discussion",
+    "messages": [
+      {
+        "id": 1,
+        "senderId": "student_1",
+        "content": "Hi Dr. Wilson, I had some questions about the AI research project requirements.",
+        "timestamp": "2024-01-15T10:00:00Z",
+        "type": "text"
+      },
+      {
+        "id": 2,
+        "senderId": "admin_1",
+        "content": "Hello Alex! I'd be happy to help. What specific aspects would you like to clarify?",
+        "timestamp": "2024-01-15T10:15:00Z",
+        "type": "text"
+      },
+      {
+        "id": 3,
+        "senderId": "student_1",
+        "content": "I'm particularly confused about the dataset requirements and the expected scope of the literature review.",
+        "timestamp": "2024-01-15T10:20:00Z",
+        "type": "text"
+      },
+      {
+        "id": 4,
+        "senderId": "admin_1",
+        "content": "Great questions! For the dataset, you'll need at least 10,000 samples with proper validation splits. The literature review should cover recent papers from the last 3 years, focusing on your chosen AI domain.",
+        "timestamp": "2024-01-15T10:25:00Z",
+        "type": "text"
+      },
+      {
+        "id": 5,
+        "senderId": "student_1",
+        "content": "Thanks for the clarification on the project requirements!",
+        "timestamp": "2024-01-15T14:30:00Z",
+        "type": "text"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "participants": ["student_2", "admin_2"],
+    "participantDetails": {
+      "student_2": {
+        "name": "Maya Patel",
+        "role": "student",
+        "avatar": "/avatars/student-2.jpg",
+        "department": "Business",
+        "year": "2nd Year"
+      },
+      "admin_2": {
+        "name": "Prof. Michael Chen",
+        "role": "admin",
+        "avatar": "/avatars/faculty-2.jpg",
+        "department": "Business",
+        "position": "Associate Professor"
+      }
+    },
+    "lastMessage": "The internship application deadline is next Friday.",
+    "lastMessageTime": "2024-01-15T16:45:00Z",
+    "unreadCount": 2,
+    "status": "active",
+    "subject": "Internship Opportunities",
+    "messages": [
+      {
+        "id": 1,
+        "senderId": "student_2",
+        "content": "Hi Prof. Chen, I wanted to ask about available internship opportunities for this summer.",
+        "timestamp": "2024-01-15T15:00:00Z",
+        "type": "text"
+      },
+      {
+        "id": 2,
+        "senderId": "admin_2",
+        "content": "Hello Maya! We have several great opportunities. I can share a list of companies that are actively recruiting our students.",
+        "timestamp": "2024-01-15T15:30:00Z",
+        "type": "text"
+      },
+      {
+        "id": 3,
+        "senderId": "admin_2",
+        "content": "The internship application deadline is next Friday.",
+        "timestamp": "2024-01-15T16:45:00Z",
+        "type": "text"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "participants": ["student_3", "admin_1"],
+    "participantDetails": {
+      "student_3": {
+        "name": "James Rodriguez",
+        "role": "student",
+        "avatar": "/avatars/student-3.jpg",
+        "department": "Engineering",
+        "year": "4th Year"
+      },
+      "admin_1": {
+        "name": "Dr. Sarah Wilson",
+        "role": "admin",
+        "avatar": "/avatars/faculty-1.jpg",
+        "department": "Computer Science",
+        "position": "Professor"
+      }
+    },
+    "lastMessage": "I'll review your proposal and get back to you by Wednesday.",
+    "lastMessageTime": "2024-01-14T11:20:00Z",
+    "unreadCount": 0,
+    "status": "active",
+    "subject": "Thesis Proposal Review",
+    "messages": [
+      {
+        "id": 1,
+        "senderId": "student_3",
+        "content": "Dr. Wilson, I've attached my thesis proposal for your review. Please let me know if you need any additional information.",
+        "timestamp": "2024-01-14T09:00:00Z",
+        "type": "text"
+      },
+      {
+        "id": 2,
+        "senderId": "admin_1",
+        "content": "Thank you James! I'll review your proposal and get back to you by Wednesday.",
+        "timestamp": "2024-01-14T11:20:00Z",
+        "type": "text"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "participants": ["student_4", "admin_3"],
+    "participantDetails": {
+      "student_4": {
+        "name": "Emily Zhang",
+        "role": "student",
+        "avatar": "/avatars/student-4.jpg",
+        "department": "Design",
+        "year": "1st Year"
+      },
+      "admin_3": {
+        "name": "Dr. Lisa Thompson",
+        "role": "admin",
+        "avatar": "/avatars/faculty-3.jpg",
+        "department": "Design",
+        "position": "Assistant Professor"
+      }
+    },
+    "lastMessage": "Looking forward to seeing your portfolio!",
+    "lastMessageTime": "2024-01-13T14:15:00Z",
+    "unreadCount": 1,
+    "status": "active",
+    "subject": "Portfolio Review Session",
+    "messages": [
+      {
+        "id": 1,
+        "senderId": "student_4",
+        "content": "Hi Dr. Thompson, I would like to schedule a portfolio review session with you.",
+        "timestamp": "2024-01-13T13:00:00Z",
+        "type": "text"
+      },
+      {
+        "id": 2,
+        "senderId": "admin_3",
+        "content": "Of course! How about Friday at 2 PM in my office? Please bring both digital and printed versions of your work.",
+        "timestamp": "2024-01-13T13:30:00Z",
+        "type": "text"
+      },
+      {
+        "id": 3,
+        "senderId": "student_4",
+        "content": "Perfect! I'll be there with my portfolio ready.",
+        "timestamp": "2024-01-13T14:00:00Z",
+        "type": "text"
+      },
+      {
+        "id": 4,
+        "senderId": "admin_3",
+        "content": "Looking forward to seeing your portfolio!",
+        "timestamp": "2024-01-13T14:15:00Z",
+        "type": "text"
+      }
+    ]
+  }
+]

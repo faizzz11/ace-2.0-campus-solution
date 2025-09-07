@@ -7,10 +7,10 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import {
-  Users, 
-  Clock, 
-  Calendar, 
-  GraduationCap, 
+  Users,
+  Clock,
+  Calendar,
+  GraduationCap,
   Target,
   CheckCircle,
   AlertCircle,
@@ -18,7 +18,16 @@ import {
   Briefcase,
   Award,
   ExternalLink,
-  Rocket
+  Rocket,
+  Sparkles,
+  TrendingUp,
+  Zap,
+  Heart,
+  MapPin,
+  BookOpen,
+  Mail,
+  Plus,
+  Search
 } from "lucide-react"
 import projectsData from "@/data/projects.json"
 import studentsData from "@/data/students.json"
@@ -52,16 +61,7 @@ export default function TeamsPage() {
   }
 
   const getProjectTypeBadge = (type: string) => {
-    switch (type) {
-      case "Faculty Project":
-        return "bg-[#e78a53]/10 text-[#e78a53] border-[#e78a53]/20"
-      case "Student Project":
-        return "bg-[#e78a53]/10 text-[#e78a53] border-[#e78a53]/20"
-      case "Research Project":
-        return "bg-[#e78a53]/10 text-[#e78a53] border-[#e78a53]/20"
-      default:
-        return "bg-[#e78a53]/10 text-[#e78a53] border-[#e78a53]/20"
-    }
+    return "bg-[#e78a53] text-white border-[#e78a53]"
   }
 
   const getDaysUntilDeadline = (deadline: string) => {
@@ -74,34 +74,38 @@ export default function TeamsPage() {
 
   const getDeadlineStatus = (deadline: string) => {
     const days = getDaysUntilDeadline(deadline)
-    if (days < 0) return { status: "expired", color: "text-red-500", bg: "bg-red-500/10" }
-    if (days <= 3) return { status: "urgent", color: "text-[#e78a53]", bg: "bg-[#e78a53]/10" }
-    if (days <= 7) return { status: "soon", color: "text-[#e78a53]/80", bg: "bg-[#e78a53]/8" }
-    return { status: "open", color: "text-[#e78a53]/60", bg: "bg-[#e78a53]/6" }
+    if (days < 0) return { status: "expired", color: "text-white", bg: "bg-red-500" }
+    if (days <= 3) return { status: "urgent", color: "text-white", bg: "bg-[#e78a53]" }
+    if (days <= 7) return { status: "soon", color: "text-white", bg: "bg-[#e78a53]" }
+    return { status: "open", color: "text-white", bg: "bg-[#e78a53]" }
   }
 
   return (
-    <div className="space-y-6 w-full">
+    <div className="w-full max-w-7xl mx-auto space-y-8 px-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="w-full"
       >
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-8">
           <div className="flex items-center gap-4">
-            <div className="p-3 bg-[#e78a53]/10 rounded-xl">
-              <Rocket className="h-8 w-8 text-[#e78a53]" />
+            <div className="p-4 bg-gradient-to-br from-[#e78a53]/20 to-[#e78a53]/10 rounded-2xl border border-[#e78a53]/20">
+              <Rocket className="h-10 w-10 text-[#e78a53]" />
             </div>
             <div>
-              <h1 className="text-3xl font-bold text-foreground">Join a Team</h1>
-              <p className="text-muted-foreground">Find and apply to open project teams looking for new members</p>
+              <h1 className="text-4xl font-bold text-foreground mb-2">Join a Team</h1>
+              <p className="text-muted-foreground text-lg">Discover exciting projects and collaborate with talented teammates</p>
             </div>
           </div>
-          <div className="flex items-center gap-3">
-            <Badge variant="secondary" className="bg-[#e78a53]/10 text-[#e78a53] border-[#e78a53]/20 px-3 py-1">
-              <CheckCircle className="h-3 w-3 mr-1" />
-              {openProjects.length} Open Projects
+          <div className="flex flex-wrap items-center gap-3">
+            <Badge variant="secondary" className="bg-[#e78a53]/10 text-[#e78a53] border-[#e78a53]/20 px-4 py-2 text-sm">
+              <Sparkles className="h-4 w-4 mr-2" />
+              Live Opportunities
+            </Badge>
+            <Badge variant="secondary" className="bg-green-500/10 text-green-500 border-green-500/20 px-4 py-2 text-sm">
+              <Target className="h-4 w-4 mr-2" />
+              {openProjects.length} Available
             </Badge>
           </div>
         </div>
@@ -111,147 +115,157 @@ export default function TeamsPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        className="grid grid-cols-1 lg:grid-cols-4 gap-6 mb-8"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8"
       >
-        <Card className="bg-card/50 border-border/50 backdrop-blur-sm">
-          <CardContent className="p-4">
-            <div className="flex items-center gap-3">
-              <div className="p-2 bg-[#e78a53]/10 rounded-lg">
-                <CheckCircle className="h-5 w-5 text-[#e78a53]" />
+        <Card className="bg-card/60 border-border/40 backdrop-blur-sm hover:bg-card/80 transition-all duration-300 group">
+          <CardContent className="p-6">
+            <div className="flex items-center gap-4">
+              <div className="p-3 bg-green-500/15 rounded-xl group-hover:scale-110 transition-transform">
+                <CheckCircle className="h-6 w-6 text-green-500" />
               </div>
               <div>
-                <p className="text-sm text-muted-foreground">Available</p>
-                <p className="text-xl font-bold text-foreground">{openProjects.length}</p>
+                <p className="text-sm text-muted-foreground font-medium">Available Projects</p>
+                <p className="text-2xl font-bold text-foreground">{openProjects.length}</p>
               </div>
             </div>
           </CardContent>
         </Card>
-        
-        <Card className="bg-card/50 border-border/50 backdrop-blur-sm">
-          <CardContent className="p-4">
-            <div className="flex items-center gap-3">
-              <div className="p-2 bg-[#e78a53]/10 rounded-lg">
-                <AlertCircle className="h-5 w-5 text-[#e78a53]" />
+
+        <Card className="bg-card/60 border-border/40 backdrop-blur-sm hover:bg-card/80 transition-all duration-300 group">
+          <CardContent className="p-6">
+            <div className="flex items-center gap-4">
+              <div className="p-3 bg-[#e78a53]/15 rounded-xl group-hover:scale-110 transition-transform">
+                <AlertCircle className="h-6 w-6 text-[#e78a53]" />
               </div>
               <div>
-                <p className="text-sm text-muted-foreground">Urgent</p>
-                <p className="text-xl font-bold text-foreground">
+                <p className="text-sm text-muted-foreground font-medium">Urgent Deadlines</p>
+                <p className="text-2xl font-bold text-foreground">
                   {openProjects.filter(p => getDaysUntilDeadline(p.applicationDeadline) <= 3).length}
                 </p>
               </div>
             </div>
           </CardContent>
         </Card>
-        
-        <Card className="bg-card/50 border-border/50 backdrop-blur-sm">
-          <CardContent className="p-4">
-            <div className="flex items-center gap-3">
-              <div className="p-2 bg-[#e78a53]/10 rounded-lg">
-                <Star className="h-5 w-5 text-[#e78a53]" />
+
+        <Card className="bg-card/60 border-border/40 backdrop-blur-sm hover:bg-card/80 transition-all duration-300 group">
+          <CardContent className="p-6">
+            <div className="flex items-center gap-4">
+              <div className="p-3 bg-blue-500/15 rounded-xl group-hover:scale-110 transition-transform">
+                <Star className="h-6 w-6 text-blue-500" />
               </div>
               <div>
-                <p className="text-sm text-muted-foreground">Applied</p>
-                <p className="text-xl font-bold text-foreground">{appliedProjects.size}</p>
+                <p className="text-sm text-muted-foreground font-medium">Applications Sent</p>
+                <p className="text-2xl font-bold text-foreground">{appliedProjects.size}</p>
               </div>
             </div>
           </CardContent>
         </Card>
-        
-        <Card className="bg-card/50 border-border/50 backdrop-blur-sm">
-          <CardContent className="p-4">
-            <div className="flex items-center gap-3">
-              <div className="p-2 bg-[#e78a53]/10 rounded-lg">
-                <Award className="h-5 w-5 text-[#e78a53]" />
+
+        <Card className="bg-card/60 border-border/40 backdrop-blur-sm hover:bg-card/80 transition-all duration-300 group">
+          <CardContent className="p-6">
+            <div className="flex items-center gap-4">
+              <div className="p-3 bg-purple-500/15 rounded-xl group-hover:scale-110 transition-transform">
+                <TrendingUp className="h-6 w-6 text-purple-500" />
               </div>
               <div>
-                <p className="text-sm text-muted-foreground">Match Rate</p>
-                <p className="text-xl font-bold text-foreground">85%</p>
+                <p className="text-sm text-muted-foreground font-medium">Success Rate</p>
+                <p className="text-2xl font-bold text-foreground">92%</p>
               </div>
             </div>
           </CardContent>
         </Card>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
         {openProjects.map((project, index) => {
           const deadlineStatus = getDeadlineStatus(project.applicationDeadline)
           const isApplied = appliedProjects.has(project.id)
           const daysLeft = getDaysUntilDeadline(project.applicationDeadline)
-          
+
           return (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="group"
             >
-              <Card className="bg-card/50 border-border/50 backdrop-blur-sm hover:bg-card/70 transition-all duration-300 h-full">
+              <Card className="bg-card/60 border-border/40 backdrop-blur-sm hover:bg-card/80 transition-all duration-300 h-full group-hover:shadow-xl group-hover:shadow-[#e78a53]/20 group-hover:border-[#e78a53]/40 group-hover:scale-[1.02] overflow-hidden">
                 <div
-                  className="h-32 bg-cover bg-center rounded-t-lg relative"
+                  className="h-40 bg-cover bg-center rounded-t-xl relative overflow-hidden"
                   style={{ backgroundImage: `url(${project.image})` }}
                 >
-                  <div className="absolute inset-0 bg-black/50 rounded-t-lg" />
-                  <div className="absolute top-3 left-3">
-                    <Badge className={getProjectTypeBadge(project.type)}>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  <div className="absolute top-4 left-4">
+                    <Badge className={`${getProjectTypeBadge(project.type)} font-semibold px-3 py-1.5 shadow-lg`}>
                       {getProjectTypeIcon(project.type)}
-                      <span className="ml-1">{project.type}</span>
+                      <span className="ml-2">{project.type}</span>
                     </Badge>
                   </div>
-                  <div className="absolute top-3 right-3">
-                    <Badge className={`${deadlineStatus.bg} ${deadlineStatus.color} border-current/20`}>
+                  <div className="absolute top-4 right-4">
+                    <Badge className={`${deadlineStatus.bg} ${deadlineStatus.color} border-current/30 font-semibold px-3 py-1.5 shadow-lg backdrop-blur-sm`}>
+                      <Clock className="h-3 w-3 mr-1" />
                       {daysLeft > 0 ? `${daysLeft} days left` : 'Expired'}
                     </Badge>
                   </div>
-                  <div className="absolute bottom-3 left-3">
-                    <Badge variant="secondary" className="bg-[#e78a53]/20 text-[#e78a53] border-[#e78a53]/30">
+                  <div className="absolute bottom-4 left-4">
+                    <Badge variant="secondary" className="bg-black/60 text-white border-white/30 backdrop-blur-sm">
                       {project.category}
                     </Badge>
                   </div>
+                  <div className="absolute bottom-4 right-4">
+                    <Badge className="bg-[#e78a53] text-white shadow-lg">
+                      <Users className="h-3 w-3 mr-1" />
+                      {project.teamSize - project.currentMembers} spots
+                    </Badge>
+                  </div>
                 </div>
-                
-                <CardHeader className="pb-3">
-                  <CardTitle className="text-xl text-foreground">{project.title}</CardTitle>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <GraduationCap className="h-4 w-4" />
-                    <span>{project.faculty || project.leader} • {project.department}</span>
+
+                <CardHeader className="pb-4">
+                  <CardTitle className="text-xl font-bold text-foreground group-hover:text-[#e78a53] transition-colors duration-300 leading-tight">
+                    {project.title}
+                  </CardTitle>
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground mt-2">
+                    <GraduationCap className="h-4 w-4 text-[#e78a53]" />
+                    <span className="font-medium">{project.faculty || project.leader}</span>
+                    <span>•</span>
+                    <span>{project.department}</span>
                   </div>
                 </CardHeader>
-                
-                <CardContent className="space-y-4">
-                  <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3">
+
+                <CardContent className="space-y-5 flex-1 flex flex-col pt-0">
+                  <p className="text-muted-foreground text-sm leading-relaxed flex-1">
                     {project.description}
                   </p>
 
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-2 text-sm">
-                        <Clock className="h-4 w-4 text-muted-foreground" />
-                        <span className="text-foreground">{project.duration}</span>
+                  <div className="p-4 rounded-lg bg-background/50 border border-border/50">
+                    <div className="grid grid-cols-2 gap-4 text-sm">
+                      <div className="flex items-center gap-2 text-muted-foreground">
+                        <Clock className="h-4 w-4 text-blue-500" />
+                        <span className="font-medium">{project.duration}</span>
                       </div>
-                      <div className="flex items-center gap-2 text-sm">
-                        <Users className="h-4 w-4 text-muted-foreground" />
-                        <span className="text-foreground">
+                      <div className="flex items-center gap-2 text-muted-foreground">
+                        <Users className="h-4 w-4 text-[#e78a53]" />
+                        <span className="font-medium">
                           {project.currentMembers}/{project.teamSize} members
                         </span>
                       </div>
-                    </div>
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-2 text-sm">
-                        <Calendar className="h-4 w-4 text-muted-foreground" />
-                        <span className="text-foreground">{project.commitment}</span>
+                      <div className="flex items-center gap-2 text-muted-foreground">
+                        <Zap className="h-4 w-4 text-purple-500" />
+                        <span className="font-medium">{project.commitment}</span>
                       </div>
-                      <div className="flex items-center gap-2 text-sm">
-                        <Target className="h-4 w-4 text-muted-foreground" />
-                        <span className="text-foreground">Start: {new Date(project.startDate).toLocaleDateString()}</span>
+                      <div className="flex items-center gap-2 text-muted-foreground">
+                        <Calendar className="h-4 w-4 text-green-500" />
+                        <span className="font-medium">{new Date(project.startDate).toLocaleDateString()}</span>
                       </div>
                     </div>
                   </div>
 
                   <div>
-                    <p className="text-xs font-medium text-muted-foreground mb-2">Required Skills:</p>
-                    <div className="flex flex-wrap gap-1">
+                    <p className="text-sm font-medium text-muted-foreground mb-3">Required Skills:</p>
+                    <div className="flex flex-wrap gap-2">
                       {project.requiredSkills.slice(0, 4).map((skill: string) => (
-                        <Badge key={skill} variant="outline" className="text-xs">
+                        <Badge key={skill} variant="secondary" className="text-xs bg-[#e78a53]/10 text-[#e78a53]">
                           {skill}
                         </Badge>
                       ))}
@@ -264,7 +278,7 @@ export default function TeamsPage() {
                   </div>
 
                   <div>
-                    <p className="text-xs font-medium text-muted-foreground mb-2">Benefits:</p>
+                    <p className="text-sm font-medium text-muted-foreground mb-2">Benefits:</p>
                     <div className="space-y-1">
                       {project.benefits.slice(0, 3).map((benefit: string, idx: number) => (
                         <div key={idx} className="flex items-center gap-2">
@@ -275,28 +289,33 @@ export default function TeamsPage() {
                     </div>
                   </div>
 
-                  <div className="flex gap-2 pt-2">
-                    <Button 
-                      className={`flex-1 ${
-                        isApplied 
-                          ? 'bg-[#e78a53]/80 hover:bg-[#e78a53]/70' 
-                          : 'bg-[#e78a53] hover:bg-[#e78a53]/90'
-                      } text-white`}
+                  <div className="flex gap-3 pt-2">
+                    <Button
+                      className={`flex-1 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 ${isApplied
+                        ? 'bg-green-500 hover:bg-green-600 text-white'
+                        : 'bg-[#e78a53] hover:bg-[#e78a53]/90 text-white'
+                        }`}
                       onClick={() => handleApply(project.id)}
                       disabled={isApplied || daysLeft < 0}
                     >
                       {isApplied ? (
                         <>
                           <CheckCircle className="h-4 w-4 mr-2" />
-                          Applied
+                          Applied Successfully
                         </>
                       ) : daysLeft < 0 ? (
-                        'Deadline Passed'
+                        <>
+                          <AlertCircle className="h-4 w-4 mr-2" />
+                          Deadline Passed
+                        </>
                       ) : (
-                        'Request to Join'
+                        <>
+                          <Plus className="h-4 w-4 mr-2" />
+                          Request to Join
+                        </>
                       )}
                     </Button>
-                    <Button variant="outline" size="icon">
+                    <Button variant="outline" size="icon" className="hover:bg-[#e78a53]/10 hover:border-[#e78a53]/40 transition-all duration-300">
                       <ExternalLink className="h-4 w-4" />
                     </Button>
                   </div>
@@ -323,7 +342,7 @@ export default function TeamsPage() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                You have applied to {appliedProjects.size} project{appliedProjects.size !== 1 ? 's' : ''}. 
+                You have applied to {appliedProjects.size} project{appliedProjects.size !== 1 ? 's' : ''}.
                 You'll receive updates on your application status via email and notifications.
               </p>
             </CardContent>
