@@ -258,9 +258,27 @@ export default function AdminClubsPage() {
       </motion.div>
 
       <Tabs defaultValue="clubs" className="w-full">
-        <TabsList className="grid w-full grid-cols-2">
-          <TabsTrigger value="clubs">Clubs Overview</TabsTrigger>
-          <TabsTrigger value="openings">Open Positions</TabsTrigger>
+        <TabsList className="grid w-full grid-cols-2 bg-muted p-1 rounded-lg">
+          <TabsTrigger
+            value="clubs"
+            style={{
+              backgroundColor: 'var(--active-bg, transparent)',
+              color: 'var(--active-color, inherit)',
+            }}
+            className="transition-all duration-200 data-[state=active]:[--active-bg:#e78a53] data-[state=active]:[--active-color:white] shadow-sm"
+          >
+            Clubs Overview
+          </TabsTrigger>
+          <TabsTrigger
+            value="openings"
+            style={{
+              backgroundColor: 'var(--active-bg, transparent)',
+              color: 'var(--active-color, inherit)',
+            }}
+            className="transition-all duration-200 data-[state=active]:[--active-bg:#e78a53] data-[state=active]:[--active-color:white] shadow-sm"
+          >
+            Open Positions
+          </TabsTrigger>
         </TabsList>
 
         <TabsContent value="clubs" className="space-y-6">
@@ -286,13 +304,13 @@ export default function AdminClubsPage() {
                       <Label>Club Name</Label>
                       <Input
                         value={newClub.name}
-                        onChange={(e) => setNewClub({...newClub, name: e.target.value})}
+                        onChange={(e) => setNewClub({ ...newClub, name: e.target.value })}
                         placeholder="Enter club name"
                       />
                     </div>
                     <div className="space-y-2">
                       <Label>Category</Label>
-                      <Select value={newClub.category} onValueChange={(value) => setNewClub({...newClub, category: value})}>
+                      <Select value={newClub.category} onValueChange={(value) => setNewClub({ ...newClub, category: value })}>
                         <SelectTrigger>
                           <SelectValue placeholder="Select category" />
                         </SelectTrigger>
@@ -311,7 +329,7 @@ export default function AdminClubsPage() {
                     <Label>Description</Label>
                     <Textarea
                       value={newClub.description}
-                      onChange={(e) => setNewClub({...newClub, description: e.target.value})}
+                      onChange={(e) => setNewClub({ ...newClub, description: e.target.value })}
                       placeholder="Describe the club's purpose and activities"
                     />
                   </div>
@@ -321,7 +339,7 @@ export default function AdminClubsPage() {
                       <Input
                         type="number"
                         value={newClub.maxMembers}
-                        onChange={(e) => setNewClub({...newClub, maxMembers: e.target.value})}
+                        onChange={(e) => setNewClub({ ...newClub, maxMembers: e.target.value })}
                         placeholder="Maximum capacity"
                       />
                     </div>
@@ -329,7 +347,7 @@ export default function AdminClubsPage() {
                       <Label>President</Label>
                       <Input
                         value={newClub.president}
-                        onChange={(e) => setNewClub({...newClub, president: e.target.value})}
+                        onChange={(e) => setNewClub({ ...newClub, president: e.target.value })}
                         placeholder="Club president name"
                       />
                     </div>
@@ -339,7 +357,7 @@ export default function AdminClubsPage() {
                       <Label>Meeting Schedule</Label>
                       <Input
                         value={newClub.meetingSchedule}
-                        onChange={(e) => setNewClub({...newClub, meetingSchedule: e.target.value})}
+                        onChange={(e) => setNewClub({ ...newClub, meetingSchedule: e.target.value })}
                         placeholder="e.g., Every Monday 6:00 PM"
                       />
                     </div>
@@ -347,7 +365,7 @@ export default function AdminClubsPage() {
                       <Label>Location</Label>
                       <Input
                         value={newClub.location}
-                        onChange={(e) => setNewClub({...newClub, location: e.target.value})}
+                        onChange={(e) => setNewClub({ ...newClub, location: e.target.value })}
                         placeholder="Meeting location"
                       />
                     </div>
@@ -356,7 +374,7 @@ export default function AdminClubsPage() {
                     <Label>Requirements (one per line)</Label>
                     <Textarea
                       value={newClub.requirements}
-                      onChange={(e) => setNewClub({...newClub, requirements: e.target.value})}
+                      onChange={(e) => setNewClub({ ...newClub, requirements: e.target.value })}
                       placeholder="List membership requirements"
                     />
                   </div>
@@ -403,7 +421,7 @@ export default function AdminClubsPage() {
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <p className="text-muted-foreground text-sm">{club.description}</p>
-                    
+
                     <div className="grid grid-cols-2 gap-4 text-sm">
                       <div className="flex items-center gap-2">
                         <Users className="h-4 w-4 text-[#e78a53]" />
@@ -477,7 +495,7 @@ export default function AdminClubsPage() {
                 <div className="grid gap-4">
                   <div className="space-y-2">
                     <Label>Select Club</Label>
-                    <Select value={newOpening.clubId} onValueChange={(value) => setNewOpening({...newOpening, clubId: value})}>
+                    <Select value={newOpening.clubId} onValueChange={(value) => setNewOpening({ ...newOpening, clubId: value })}>
                       <SelectTrigger>
                         <SelectValue placeholder="Choose a club" />
                       </SelectTrigger>
@@ -493,13 +511,13 @@ export default function AdminClubsPage() {
                       <Label>Position Title</Label>
                       <Input
                         value={newOpening.title}
-                        onChange={(e) => setNewOpening({...newOpening, title: e.target.value})}
+                        onChange={(e) => setNewOpening({ ...newOpening, title: e.target.value })}
                         placeholder="Position title"
                       />
                     </div>
                     <div className="space-y-2">
                       <Label>Type</Label>
-                      <Select value={newOpening.type} onValueChange={(value) => setNewOpening({...newOpening, type: value})}>
+                      <Select value={newOpening.type} onValueChange={(value) => setNewOpening({ ...newOpening, type: value })}>
                         <SelectTrigger>
                           <SelectValue placeholder="Position type" />
                         </SelectTrigger>
@@ -518,7 +536,7 @@ export default function AdminClubsPage() {
                     <Label>Description</Label>
                     <Textarea
                       value={newOpening.description}
-                      onChange={(e) => setNewOpening({...newOpening, description: e.target.value})}
+                      onChange={(e) => setNewOpening({ ...newOpening, description: e.target.value })}
                       placeholder="Describe the position responsibilities"
                     />
                   </div>
@@ -526,7 +544,7 @@ export default function AdminClubsPage() {
                     <Label>Requirements</Label>
                     <Textarea
                       value={newOpening.requirements}
-                      onChange={(e) => setNewOpening({...newOpening, requirements: e.target.value})}
+                      onChange={(e) => setNewOpening({ ...newOpening, requirements: e.target.value })}
                       placeholder="List position requirements"
                     />
                   </div>
@@ -536,7 +554,7 @@ export default function AdminClubsPage() {
                       <Input
                         type="number"
                         value={newOpening.positions}
-                        onChange={(e) => setNewOpening({...newOpening, positions: e.target.value})}
+                        onChange={(e) => setNewOpening({ ...newOpening, positions: e.target.value })}
                         placeholder="Number of openings"
                       />
                     </div>
@@ -545,14 +563,14 @@ export default function AdminClubsPage() {
                       <Input
                         type="date"
                         value={newOpening.deadline}
-                        onChange={(e) => setNewOpening({...newOpening, deadline: e.target.value})}
+                        onChange={(e) => setNewOpening({ ...newOpening, deadline: e.target.value })}
                       />
                     </div>
                     <div className="space-y-2">
                       <Label>Time Commitment</Label>
                       <Input
                         value={newOpening.commitment}
-                        onChange={(e) => setNewOpening({...newOpening, commitment: e.target.value})}
+                        onChange={(e) => setNewOpening({ ...newOpening, commitment: e.target.value })}
                         placeholder="e.g., 10 hours/week"
                       />
                     </div>
@@ -603,7 +621,7 @@ export default function AdminClubsPage() {
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <p className="text-muted-foreground">{opening.description}</p>
-                    
+
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
                       <div className="flex items-center gap-2">
                         <Calendar className="h-4 w-4 text-[#e78a53]" />

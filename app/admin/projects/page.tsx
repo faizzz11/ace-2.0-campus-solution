@@ -236,7 +236,7 @@ export default function AdminProjectsPage() {
   }
 
   const handleApplicationAction = (applicationId: number, action: string) => {
-    setApplications(applications.map(app => 
+    setApplications(applications.map(app =>
       app.id === applicationId ? { ...app, status: action } : app
     ))
   }
@@ -273,9 +273,27 @@ export default function AdminProjectsPage() {
       </motion.div>
 
       <Tabs defaultValue="projects" className="w-full">
-        <TabsList className="grid w-full grid-cols-2">
-          <TabsTrigger value="projects">Projects Overview</TabsTrigger>
-          <TabsTrigger value="applications">Student Applications</TabsTrigger>
+        <TabsList className="grid w-full grid-cols-2 bg-muted p-1 rounded-lg">
+          <TabsTrigger
+            value="projects"
+            style={{
+              backgroundColor: 'var(--active-bg, transparent)',
+              color: 'var(--active-color, inherit)',
+            }}
+            className="transition-all duration-200 data-[state=active]:[--active-bg:#e78a53] data-[state=active]:[--active-color:white] shadow-sm"
+          >
+            Projects Overview
+          </TabsTrigger>
+          <TabsTrigger
+            value="applications"
+            style={{
+              backgroundColor: 'var(--active-bg, transparent)',
+              color: 'var(--active-color, inherit)',
+            }}
+            className="transition-all duration-200 data-[state=active]:[--active-bg:#e78a53] data-[state=active]:[--active-color:white] shadow-sm"
+          >
+            Student Applications
+          </TabsTrigger>
         </TabsList>
 
         <TabsContent value="projects" className="space-y-6">
@@ -301,13 +319,13 @@ export default function AdminProjectsPage() {
                       <Label>Project Title</Label>
                       <Input
                         value={newProject.title}
-                        onChange={(e) => setNewProject({...newProject, title: e.target.value})}
+                        onChange={(e) => setNewProject({ ...newProject, title: e.target.value })}
                         placeholder="Enter project title"
                       />
                     </div>
                     <div className="space-y-2">
                       <Label>Category</Label>
-                      <Select value={newProject.category} onValueChange={(value) => setNewProject({...newProject, category: value})}>
+                      <Select value={newProject.category} onValueChange={(value) => setNewProject({ ...newProject, category: value })}>
                         <SelectTrigger>
                           <SelectValue placeholder="Select category" />
                         </SelectTrigger>
@@ -326,7 +344,7 @@ export default function AdminProjectsPage() {
                     <Label>Description</Label>
                     <Textarea
                       value={newProject.description}
-                      onChange={(e) => setNewProject({...newProject, description: e.target.value})}
+                      onChange={(e) => setNewProject({ ...newProject, description: e.target.value })}
                       placeholder="Describe the project goals and scope"
                     />
                   </div>
@@ -335,7 +353,7 @@ export default function AdminProjectsPage() {
                       <Label>Supervisor</Label>
                       <Input
                         value={newProject.supervisor}
-                        onChange={(e) => setNewProject({...newProject, supervisor: e.target.value})}
+                        onChange={(e) => setNewProject({ ...newProject, supervisor: e.target.value })}
                         placeholder="Project supervisor name"
                       />
                     </div>
@@ -343,7 +361,7 @@ export default function AdminProjectsPage() {
                       <Label>Department</Label>
                       <Input
                         value={newProject.department}
-                        onChange={(e) => setNewProject({...newProject, department: e.target.value})}
+                        onChange={(e) => setNewProject({ ...newProject, department: e.target.value })}
                         placeholder="Department name"
                       />
                     </div>
@@ -354,7 +372,7 @@ export default function AdminProjectsPage() {
                       <Input
                         type="number"
                         value={newProject.maxMembers}
-                        onChange={(e) => setNewProject({...newProject, maxMembers: e.target.value})}
+                        onChange={(e) => setNewProject({ ...newProject, maxMembers: e.target.value })}
                         placeholder="Team size"
                       />
                     </div>
@@ -362,13 +380,13 @@ export default function AdminProjectsPage() {
                       <Label>Duration</Label>
                       <Input
                         value={newProject.duration}
-                        onChange={(e) => setNewProject({...newProject, duration: e.target.value})}
+                        onChange={(e) => setNewProject({ ...newProject, duration: e.target.value })}
                         placeholder="e.g., 6 months"
                       />
                     </div>
                     <div className="space-y-2">
                       <Label>Difficulty</Label>
-                      <Select value={newProject.difficulty} onValueChange={(value) => setNewProject({...newProject, difficulty: value})}>
+                      <Select value={newProject.difficulty} onValueChange={(value) => setNewProject({ ...newProject, difficulty: value })}>
                         <SelectTrigger>
                           <SelectValue placeholder="Select difficulty" />
                         </SelectTrigger>
@@ -385,7 +403,7 @@ export default function AdminProjectsPage() {
                       <Label>Required Skills (comma-separated)</Label>
                       <Input
                         value={newProject.skills}
-                        onChange={(e) => setNewProject({...newProject, skills: e.target.value})}
+                        onChange={(e) => setNewProject({ ...newProject, skills: e.target.value })}
                         placeholder="Python, React, Machine Learning"
                       />
                     </div>
@@ -393,7 +411,7 @@ export default function AdminProjectsPage() {
                       <Label>Technologies (comma-separated)</Label>
                       <Input
                         value={newProject.technologies}
-                        onChange={(e) => setNewProject({...newProject, technologies: e.target.value})}
+                        onChange={(e) => setNewProject({ ...newProject, technologies: e.target.value })}
                         placeholder="Python, TensorFlow, AWS"
                       />
                     </div>
@@ -402,7 +420,7 @@ export default function AdminProjectsPage() {
                     <Label>Requirements (one per line)</Label>
                     <Textarea
                       value={newProject.requirements}
-                      onChange={(e) => setNewProject({...newProject, requirements: e.target.value})}
+                      onChange={(e) => setNewProject({ ...newProject, requirements: e.target.value })}
                       placeholder="List project requirements"
                     />
                   </div>
@@ -410,7 +428,7 @@ export default function AdminProjectsPage() {
                     <Label>Deliverables (one per line)</Label>
                     <Textarea
                       value={newProject.deliverables}
-                      onChange={(e) => setNewProject({...newProject, deliverables: e.target.value})}
+                      onChange={(e) => setNewProject({ ...newProject, deliverables: e.target.value })}
                       placeholder="List expected deliverables"
                     />
                   </div>
@@ -418,7 +436,7 @@ export default function AdminProjectsPage() {
                     <Label>Budget</Label>
                     <Input
                       value={newProject.budget}
-                      onChange={(e) => setNewProject({...newProject, budget: e.target.value})}
+                      onChange={(e) => setNewProject({ ...newProject, budget: e.target.value })}
                       placeholder="e.g., $5000"
                     />
                   </div>
@@ -470,7 +488,7 @@ export default function AdminProjectsPage() {
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <p className="text-muted-foreground text-sm">{project.description}</p>
-                    
+
                     <div className="space-y-2">
                       <div className="flex justify-between text-sm">
                         <span>Progress</span>
@@ -579,8 +597,8 @@ export default function AdminProjectsPage() {
                           <Badge variant="secondary">{application.year}</Badge>
                           <Badge className={
                             application.status === 'pending' ? 'bg-yellow-500/10 text-yellow-500' :
-                            application.status === 'approved' ? 'bg-green-500/10 text-green-500' :
-                            'bg-red-500/10 text-red-500'
+                              application.status === 'approved' ? 'bg-green-500/10 text-green-500' :
+                                'bg-red-500/10 text-red-500'
                           }>
                             {application.status}
                           </Badge>
@@ -622,17 +640,17 @@ export default function AdminProjectsPage() {
 
                     {application.status === 'pending' && (
                       <div className="flex gap-2 pt-2">
-                        <Button 
+                        <Button
                           onClick={() => handleApplicationAction(application.id, 'approved')}
-                          size="sm" 
+                          size="sm"
                           className="bg-green-500 hover:bg-green-600"
                         >
                           <CheckCircle className="h-4 w-4 mr-2" />
                           Approve
                         </Button>
-                        <Button 
+                        <Button
                           onClick={() => handleApplicationAction(application.id, 'rejected')}
-                          variant="destructive" 
+                          variant="destructive"
                           size="sm"
                         >
                           <AlertCircle className="h-4 w-4 mr-2" />

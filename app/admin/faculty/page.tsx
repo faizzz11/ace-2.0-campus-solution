@@ -329,9 +329,27 @@ export default function AdminFacultyPage() {
       </motion.div>
 
       <Tabs defaultValue="faculty" className="w-full">
-        <TabsList className="grid w-full grid-cols-2">
-          <TabsTrigger value="faculty">Faculty Directory</TabsTrigger>
-          <TabsTrigger value="events">Events & Activities</TabsTrigger>
+        <TabsList className="grid w-full grid-cols-2 bg-muted p-1 rounded-lg">
+          <TabsTrigger
+            value="faculty"
+            style={{
+              backgroundColor: 'var(--active-bg, transparent)',
+              color: 'var(--active-color, inherit)',
+            }}
+            className="transition-all duration-200 data-[state=active]:[--active-bg:#e78a53] data-[state=active]:[--active-color:white] shadow-sm"
+          >
+            Faculty Directory
+          </TabsTrigger>
+          <TabsTrigger
+            value="events"
+            style={{
+              backgroundColor: 'var(--active-bg, transparent)',
+              color: 'var(--active-color, inherit)',
+            }}
+            className="transition-all duration-200 data-[state=active]:[--active-bg:#e78a53] data-[state=active]:[--active-color:white] shadow-sm"
+          >
+            Events & Activities
+          </TabsTrigger>
         </TabsList>
 
         <TabsContent value="faculty" className="space-y-6">
@@ -357,7 +375,7 @@ export default function AdminFacultyPage() {
                       <Label>Full Name</Label>
                       <Input
                         value={newFaculty.name}
-                        onChange={(e) => setNewFaculty({...newFaculty, name: e.target.value})}
+                        onChange={(e) => setNewFaculty({ ...newFaculty, name: e.target.value })}
                         placeholder="Dr. John Smith"
                       />
                     </div>
@@ -365,7 +383,7 @@ export default function AdminFacultyPage() {
                       <Label>Email</Label>
                       <Input
                         value={newFaculty.email}
-                        onChange={(e) => setNewFaculty({...newFaculty, email: e.target.value})}
+                        onChange={(e) => setNewFaculty({ ...newFaculty, email: e.target.value })}
                         placeholder="john.smith@university.edu"
                       />
                     </div>
@@ -375,7 +393,7 @@ export default function AdminFacultyPage() {
                       <Label>Phone</Label>
                       <Input
                         value={newFaculty.phone}
-                        onChange={(e) => setNewFaculty({...newFaculty, phone: e.target.value})}
+                        onChange={(e) => setNewFaculty({ ...newFaculty, phone: e.target.value })}
                         placeholder="+1 (555) 123-4567"
                       />
                     </div>
@@ -383,7 +401,7 @@ export default function AdminFacultyPage() {
                       <Label>Office</Label>
                       <Input
                         value={newFaculty.office}
-                        onChange={(e) => setNewFaculty({...newFaculty, office: e.target.value})}
+                        onChange={(e) => setNewFaculty({ ...newFaculty, office: e.target.value })}
                         placeholder="Building Room Number"
                       />
                     </div>
@@ -391,7 +409,7 @@ export default function AdminFacultyPage() {
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label>Department</Label>
-                      <Select value={newFaculty.department} onValueChange={(value) => setNewFaculty({...newFaculty, department: value})}>
+                      <Select value={newFaculty.department} onValueChange={(value) => setNewFaculty({ ...newFaculty, department: value })}>
                         <SelectTrigger>
                           <SelectValue placeholder="Select department" />
                         </SelectTrigger>
@@ -407,7 +425,7 @@ export default function AdminFacultyPage() {
                     </div>
                     <div className="space-y-2">
                       <Label>Position</Label>
-                      <Select value={newFaculty.position} onValueChange={(value) => setNewFaculty({...newFaculty, position: value})}>
+                      <Select value={newFaculty.position} onValueChange={(value) => setNewFaculty({ ...newFaculty, position: value })}>
                         <SelectTrigger>
                           <SelectValue placeholder="Select position" />
                         </SelectTrigger>
@@ -425,7 +443,7 @@ export default function AdminFacultyPage() {
                     <Label>Office Hours</Label>
                     <Input
                       value={newFaculty.officeHours}
-                      onChange={(e) => setNewFaculty({...newFaculty, officeHours: e.target.value})}
+                      onChange={(e) => setNewFaculty({ ...newFaculty, officeHours: e.target.value })}
                       placeholder="Monday & Wednesday 2-4 PM"
                     />
                   </div>
@@ -433,7 +451,7 @@ export default function AdminFacultyPage() {
                     <Label>Bio</Label>
                     <Textarea
                       value={newFaculty.bio}
-                      onChange={(e) => setNewFaculty({...newFaculty, bio: e.target.value})}
+                      onChange={(e) => setNewFaculty({ ...newFaculty, bio: e.target.value })}
                       placeholder="Brief biography and background"
                     />
                   </div>
@@ -441,7 +459,7 @@ export default function AdminFacultyPage() {
                     <Label>Specialization (comma-separated)</Label>
                     <Input
                       value={newFaculty.specialization}
-                      onChange={(e) => setNewFaculty({...newFaculty, specialization: e.target.value})}
+                      onChange={(e) => setNewFaculty({ ...newFaculty, specialization: e.target.value })}
                       placeholder="AI, Machine Learning, Data Science"
                     />
                   </div>
@@ -449,7 +467,7 @@ export default function AdminFacultyPage() {
                     <Label>Courses Teaching (comma-separated)</Label>
                     <Input
                       value={newFaculty.courses}
-                      onChange={(e) => setNewFaculty({...newFaculty, courses: e.target.value})}
+                      onChange={(e) => setNewFaculty({ ...newFaculty, courses: e.target.value })}
                       placeholder="CS 301, CS 450"
                     />
                   </div>
@@ -457,7 +475,7 @@ export default function AdminFacultyPage() {
                     <Label>Research Interests (comma-separated)</Label>
                     <Input
                       value={newFaculty.research}
-                      onChange={(e) => setNewFaculty({...newFaculty, research: e.target.value})}
+                      onChange={(e) => setNewFaculty({ ...newFaculty, research: e.target.value })}
                       placeholder="Deep Learning, Computer Vision"
                     />
                   </div>
@@ -466,7 +484,7 @@ export default function AdminFacultyPage() {
                       <Label>Education</Label>
                       <Input
                         value={newFaculty.education}
-                        onChange={(e) => setNewFaculty({...newFaculty, education: e.target.value})}
+                        onChange={(e) => setNewFaculty({ ...newFaculty, education: e.target.value })}
                         placeholder="PhD in Computer Science - MIT"
                       />
                     </div>
@@ -474,7 +492,7 @@ export default function AdminFacultyPage() {
                       <Label>Experience</Label>
                       <Input
                         value={newFaculty.experience}
-                        onChange={(e) => setNewFaculty({...newFaculty, experience: e.target.value})}
+                        onChange={(e) => setNewFaculty({ ...newFaculty, experience: e.target.value })}
                         placeholder="15 years"
                       />
                     </div>
@@ -533,7 +551,7 @@ export default function AdminFacultyPage() {
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <p className="text-muted-foreground text-sm">{member.bio}</p>
-                    
+
                     <div className="grid grid-cols-2 gap-4 text-sm">
                       <div className="flex items-center gap-2">
                         <Mail className="h-4 w-4 text-[#e78a53]" />
@@ -624,7 +642,7 @@ export default function AdminFacultyPage() {
                     <Label>Event Title</Label>
                     <Input
                       value={newEvent.title}
-                      onChange={(e) => setNewEvent({...newEvent, title: e.target.value})}
+                      onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })}
                       placeholder="Enter event title"
                     />
                   </div>
@@ -632,14 +650,14 @@ export default function AdminFacultyPage() {
                     <Label>Description</Label>
                     <Textarea
                       value={newEvent.description}
-                      onChange={(e) => setNewEvent({...newEvent, description: e.target.value})}
+                      onChange={(e) => setNewEvent({ ...newEvent, description: e.target.value })}
                       placeholder="Describe the event"
                     />
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label>Organizer</Label>
-                      <Select value={newEvent.organizer} onValueChange={(value) => setNewEvent({...newEvent, organizer: value})}>
+                      <Select value={newEvent.organizer} onValueChange={(value) => setNewEvent({ ...newEvent, organizer: value })}>
                         <SelectTrigger>
                           <SelectValue placeholder="Select organizer" />
                         </SelectTrigger>
@@ -654,7 +672,7 @@ export default function AdminFacultyPage() {
                       <Label>Department</Label>
                       <Input
                         value={newEvent.department}
-                        onChange={(e) => setNewEvent({...newEvent, department: e.target.value})}
+                        onChange={(e) => setNewEvent({ ...newEvent, department: e.target.value })}
                         placeholder="Department name"
                       />
                     </div>
@@ -665,14 +683,14 @@ export default function AdminFacultyPage() {
                       <Input
                         type="date"
                         value={newEvent.date}
-                        onChange={(e) => setNewEvent({...newEvent, date: e.target.value})}
+                        onChange={(e) => setNewEvent({ ...newEvent, date: e.target.value })}
                       />
                     </div>
                     <div className="space-y-2">
                       <Label>Time</Label>
                       <Input
                         value={newEvent.time}
-                        onChange={(e) => setNewEvent({...newEvent, time: e.target.value})}
+                        onChange={(e) => setNewEvent({ ...newEvent, time: e.target.value })}
                         placeholder="9:00 AM - 5:00 PM"
                       />
                     </div>
@@ -681,7 +699,7 @@ export default function AdminFacultyPage() {
                       <Input
                         type="number"
                         value={newEvent.capacity}
-                        onChange={(e) => setNewEvent({...newEvent, capacity: e.target.value})}
+                        onChange={(e) => setNewEvent({ ...newEvent, capacity: e.target.value })}
                         placeholder="Max attendees"
                       />
                     </div>
@@ -691,13 +709,13 @@ export default function AdminFacultyPage() {
                       <Label>Location</Label>
                       <Input
                         value={newEvent.location}
-                        onChange={(e) => setNewEvent({...newEvent, location: e.target.value})}
+                        onChange={(e) => setNewEvent({ ...newEvent, location: e.target.value })}
                         placeholder="Venue location"
                       />
                     </div>
                     <div className="space-y-2">
                       <Label>Event Type</Label>
-                      <Select value={newEvent.type} onValueChange={(value) => setNewEvent({...newEvent, type: value})}>
+                      <Select value={newEvent.type} onValueChange={(value) => setNewEvent({ ...newEvent, type: value })}>
                         <SelectTrigger>
                           <SelectValue placeholder="Select type" />
                         </SelectTrigger>
@@ -716,7 +734,7 @@ export default function AdminFacultyPage() {
                     <Label>Speakers (comma-separated)</Label>
                     <Input
                       value={newEvent.speakers}
-                      onChange={(e) => setNewEvent({...newEvent, speakers: e.target.value})}
+                      onChange={(e) => setNewEvent({ ...newEvent, speakers: e.target.value })}
                       placeholder="Dr. Smith, Prof. Johnson"
                     />
                   </div>
@@ -724,7 +742,7 @@ export default function AdminFacultyPage() {
                     <Label>Agenda (comma-separated)</Label>
                     <Input
                       value={newEvent.agenda}
-                      onChange={(e) => setNewEvent({...newEvent, agenda: e.target.value})}
+                      onChange={(e) => setNewEvent({ ...newEvent, agenda: e.target.value })}
                       placeholder="Opening, Keynote, Panel Discussion"
                     />
                   </div>
@@ -732,7 +750,7 @@ export default function AdminFacultyPage() {
                     <Label>Requirements</Label>
                     <Textarea
                       value={newEvent.requirements}
-                      onChange={(e) => setNewEvent({...newEvent, requirements: e.target.value})}
+                      onChange={(e) => setNewEvent({ ...newEvent, requirements: e.target.value })}
                       placeholder="Prerequisites or requirements"
                     />
                   </div>
@@ -741,7 +759,7 @@ export default function AdminFacultyPage() {
                     <Input
                       type="date"
                       value={newEvent.registration_deadline}
-                      onChange={(e) => setNewEvent({...newEvent, registration_deadline: e.target.value})}
+                      onChange={(e) => setNewEvent({ ...newEvent, registration_deadline: e.target.value })}
                     />
                   </div>
                 </div>
@@ -793,7 +811,7 @@ export default function AdminFacultyPage() {
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <p className="text-muted-foreground">{event.description}</p>
-                    
+
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
                       <div className="flex items-center gap-2">
                         <Calendar className="h-4 w-4 text-[#e78a53]" />
